@@ -1,64 +1,48 @@
-/* =========================
-   GLOBAL SETTINGS
-========================= */
-
+/*==================================================
+                GOOGLE RESET
+==================================================*/
 
 *{
-
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
-
 }
-
-
 
 html{
-
     scroll-behavior:smooth;
-
 }
-
-
 
 body{
 
-    min-height:100vh;
-
-    color:white;
+    font-family:'Poppins',sans-serif;
 
     overflow-x:hidden;
 
+    color:#fff;
 
-    background:
+    background:#080312;
 
-    radial-gradient(circle at top left,#ffb6f9,transparent 35%),
+    min-height:100vh;
 
-    radial-gradient(circle at bottom right,#8e2de2,transparent 40%),
-
-    linear-gradient(135deg,#240046,#7209b7);
-
+    position:relative;
 
 }
 
 
 
 
-
-/* =========================
-   FIREWORK CANVAS
-========================= */
-
+/*==================================================
+                FIREWORK CANVAS
+==================================================*/
 
 #fireworks{
 
     position:fixed;
 
-    top:0;
-    left:0;
+    inset:0;
 
     width:100%;
+
     height:100%;
 
     z-index:0;
@@ -71,90 +55,43 @@ body{
 
 
 
-/* =========================
-   FLOATING HEARTS
-========================= */
+/*==================================================
+                GALAXY BACKGROUND
+==================================================*/
 
-
-.hearts{
+.galaxy{
 
     position:fixed;
 
     inset:0;
 
-    overflow:hidden;
+    z-index:-5;
 
-    pointer-events:none;
+    background:
 
-    z-index:2;
+    radial-gradient(circle at 15% 25%,
+    rgba(183,90,255,.35),
+    transparent 28%),
 
-}
+    radial-gradient(circle at 80% 15%,
+    rgba(255,120,220,.20),
+    transparent 25%),
 
+    radial-gradient(circle at 60% 70%,
+    rgba(110,60,255,.30),
+    transparent 35%),
 
+    radial-gradient(circle at 30% 90%,
+    rgba(255,255,255,.05),
+    transparent 30%),
 
-.heart{
-
-    position:absolute;
-
-    bottom:-40px;
-
-    animation:floatHeart linear forwards;
-
-    filter:
-
-    drop-shadow(0 0 12px rgba(255,255,255,.8));
-
-
-}
-
-
-
-@keyframes floatHeart{
-
-
-    0%{
-
-        transform:
-
-        translateY(0)
-
-        rotate(0deg)
-
-        scale(.8);
-
-
-        opacity:0;
-
-
-    }
-
-
-    20%{
-
-        opacity:1;
-
-    }
-
-
-
-    100%{
-
-
-        transform:
-
-        translateY(-120vh)
-
-        rotate(360deg)
-
-        scale(1.6);
-
-
-
-        opacity:0;
-
-
-    }
-
+    linear-gradient(
+        180deg,
+        #05010d,
+        #14072b,
+        #220c45,
+        #0d031a
+    );
 
 }
 
@@ -162,14 +99,107 @@ body{
 
 
 
+/*==================================================
+                STAR LAYER
+==================================================*/
+
+.stars{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:-4;
+
+    background-image:
+
+    radial-gradient(2px 2px at 20px 40px,#ffffff,transparent),
+
+    radial-gradient(2px 2px at 160px 90px,#ffffff,transparent),
+
+    radial-gradient(1px 1px at 300px 250px,#ffffff,transparent),
+
+    radial-gradient(2px 2px at 500px 120px,#ffffff,transparent),
+
+    radial-gradient(1px 1px at 750px 50px,#ffffff,transparent),
+
+    radial-gradient(2px 2px at 980px 180px,#ffffff,transparent),
+
+    radial-gradient(2px 2px at 1200px 90px,#ffffff,transparent),
+
+    radial-gradient(1px 1px at 1450px 260px,#ffffff,transparent);
+
+    background-repeat:repeat;
+
+    background-size:1600px 800px;
+
+}
 
 
-/* =========================
-   MAIN CONTAINER
-========================= */
 
 
-.container{
+
+/*==================================================
+            TWINKLING STARS
+==================================================*/
+
+.twinkling{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:-3;
+
+    animation:twinkle 8s linear infinite;
+
+    opacity:.8;
+
+    background:
+
+    radial-gradient(circle,#ffffff55 1px,transparent 2px);
+
+    background-size:180px 180px;
+
+}
+
+@keyframes twinkle{
+
+0%{
+
+opacity:.25;
+
+transform:translateY(0);
+
+}
+
+50%{
+
+opacity:1;
+
+transform:translateY(-12px);
+
+}
+
+100%{
+
+opacity:.25;
+
+transform:translateY(0);
+
+}
+
+}
+
+
+
+
+
+/*==================================================
+                HERO SECTION
+==================================================*/
+
+.hero{
 
     min-height:100vh;
 
@@ -185,79 +215,53 @@ body{
 
     z-index:5;
 
-
 }
 
 
 
 
 
+/*==================================================
+            PREMIUM GLASS CARD
+==================================================*/
 
+.glass-card{
 
-/* =========================
-   GLASS EFFECT
-========================= */
+    width:min(92%,700px);
 
-
-.card,
-.glass-box{
-
-
-    width:90%;
-
-    max-width:700px;
-
-    margin:25px auto;
-
-    padding:35px;
-
-
-
-    background:
-
-    linear-gradient(
-
-    135deg,
-
-    rgba(255,255,255,.25),
-
-    rgba(255,255,255,.08)
-
-    );
-
-
-
-    backdrop-filter:blur(25px);
-
-    -webkit-backdrop-filter:blur(25px);
-
-
-
-    border:
-
-    1px solid rgba(255,255,255,.35);
-
-
+    padding:45px;
 
     border-radius:35px;
 
-
-
-    box-shadow:
-
-
-    0 25px 60px rgba(0,0,0,.35),
-
-
-    inset 0 0 40px rgba(255,255,255,.12);
-
-
+    text-align:center;
 
     position:relative;
 
     overflow:hidden;
 
+    background:
 
+    linear-gradient(
+
+        135deg,
+
+        rgba(255,255,255,.18),
+
+        rgba(255,255,255,.05)
+
+    );
+
+    border:1px solid rgba(255,255,255,.18);
+
+    backdrop-filter:blur(25px);
+
+    -webkit-backdrop-filter:blur(25px);
+
+    box-shadow:
+
+    0 20px 60px rgba(0,0,0,.35),
+
+    inset 0 1px 0 rgba(255,255,255,.35);
 
 }
 
@@ -265,241 +269,180 @@ body{
 
 
 
+/* Glass Reflection */
 
-/* Glass Shine */
-
-
-.card::before,
-.glass-box::before{
-
+.glass-card::before{
 
     content:"";
 
     position:absolute;
 
+    width:220px;
 
-    width:200px;
-
-    height:200px;
-
+    height:220px;
 
     background:
 
-    rgba(255,255,255,.15);
+    radial-gradient(
 
+        circle,
 
+        rgba(255,255,255,.28),
 
-    border-radius:50%;
-
-
-    top:-100px;
-
-    right:-100px;
-
-
-
-    filter:blur(10px);
-
-
-}
-
-
-
-
-
-
-
-
-/* =========================
-   MAIN CARD
-========================= */
-
-
-.card{
-
-    text-align:center;
-
-    animation:
-
-    cardAppear 1.5s ease;
-
-
-}
-
-
-
-
-@keyframes cardAppear{
-
-
-from{
-
-    opacity:0;
-
-    transform:
-
-    translateY(50px)
-
-    scale(.8);
-
-}
-
-
-
-to{
-
-    opacity:1;
-
-    transform:
-
-    translateY(0)
-
-    scale(1);
-
-}
-
-
-}
-
-
-
-
-.card h3{
-
-
-    font-size:28px;
-
-    letter-spacing:1px;
-
-
-}
-
-
-
-.card h1{
-
-
-    margin:20px 0;
-
-
-    font-size:65px;
-
-
-    font-weight:700;
-
-
-    text-shadow:
-
-
-    0 0 20px rgba(255,255,255,.5);
-
-
-}
-
-
-
-.card p{
-
-
-    line-height:2;
-
-    font-size:17px;
-
-
-}
-
-
-
-
-
-/* =========================
-   BUTTON
-========================= */
-
-
-button{
-
-
-    margin-top:30px;
-
-
-    padding:16px 40px;
-
-
-    border:none;
-
-
-    border-radius:50px;
-
-
-
-    background:
-
-    linear-gradient(
-
-    45deg,
-
-    #ffffff,
-
-    #ffd6ff
+        transparent 70%
 
     );
 
+    top:-120px;
+
+    right:-120px;
+
+    border-radius:50%;
+
+}
+
+.glass-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:35px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    pointer-events:none;
+
+}
 
 
-    color:#7209b7;
 
 
 
-    font-size:18px;
+/*==================================================
+                HERO CONTENT
+==================================================*/
 
+.tag{
 
-    font-weight:600;
+    display:inline-block;
 
+    padding:8px 20px;
+
+    border-radius:50px;
+
+    background:rgba(255,255,255,.12);
+
+    border:1px solid rgba(255,255,255,.18);
+
+    margin-bottom:20px;
+
+    font-size:.9rem;
+
+    letter-spacing:.5px;
+
+}
+
+.hero h2{
+
+    font-size:2rem;
+
+    font-weight:500;
+
+    margin-bottom:10px;
+
+}
+
+.hero h1{
+
+    font-size:4.2rem;
+
+    margin-bottom:20px;
+
+    color:#ffffff;
+
+    text-shadow:
+
+    0 0 25px rgba(255,170,255,.55);
+
+}
+
+.hero-text{
+
+    max-width:520px;
+
+    margin:auto;
+
+    line-height:1.9;
+
+    color:#f3ecff;
+
+    opacity:.95;
+
+}
+
+/*==================================================
+                BUTTON
+==================================================*/
+
+button{
+
+    margin-top:35px;
+
+    padding:16px 42px;
+
+    border:none;
+
+    outline:none;
 
     cursor:pointer;
 
+    border-radius:60px;
+
+    font-size:1rem;
+
+    font-weight:600;
+
+    color:#ffffff;
+
+    background:linear-gradient(
+        135deg,
+        #9d4edd,
+        #c77dff
+    );
 
     transition:.4s;
 
-
     box-shadow:
-
-    0 10px 30px rgba(255,255,255,.3);
-
+    0 10px 30px rgba(157,78,221,.45);
 
 }
-
-
-
 
 button:hover{
 
-
     transform:
-
-    translateY(-5px)
-
-    scale(1.05);
-
-
+    translateY(-6px)
+    scale(1.04);
 
     box-shadow:
+    0 20px 45px rgba(199,125,255,.55);
 
-    0 0 40px white;
+}
 
+button:active{
+
+    transform:scale(.97);
 
 }
 
 
 
 
-
-
-/* =========================
-   HIDDEN SECTION
-========================= */
-
+/*==================================================
+            HIDDEN SECTION
+==================================================*/
 
 .hidden{
 
@@ -507,124 +450,274 @@ button:hover{
 
 }
 
-
-
 #giftSection{
-
 
     position:relative;
 
     z-index:5;
 
-    padding-bottom:50px;
+    width:100%;
 
+    padding:40px 0 100px;
+
+}
+
+
+
+
+/*==================================================
+            COMMON SECTION
+==================================================*/
+
+.message-section,
+.notes-section,
+.reasons-section{
+
+    width:min(92%,900px);
+
+    margin:auto;
+
+    margin-bottom:45px;
+
+}
+
+.section-tag{
+
+    display:inline-block;
+
+    padding:8px 18px;
+
+    margin-bottom:18px;
+
+    border-radius:40px;
+
+    background:rgba(255,255,255,.10);
+
+    border:1px solid rgba(255,255,255,.18);
+
+    font-size:.85rem;
+
+    color:#f8eaff;
 
 }
 
 
 
 
+/*==================================================
+            LETTER
+==================================================*/
 
+.message-section h2{
 
-/* =========================
-   TEXT BOXES
-========================= */
-
-
-.glass-box{
-
-
-    text-align:center;
-
-
-}
-
-
-
-.glass-box h2{
-
-
-    font-size:32px;
+    font-size:2.2rem;
 
     margin-bottom:25px;
 
+}
+
+.letter{
+
+    line-height:2.1;
+
+    color:#efe7ff;
+
+    font-size:1rem;
+
+    text-align:left;
 
 }
 
 
 
-.glass-box p{
 
+/*==================================================
+            NOTES GRID
+==================================================*/
 
-    line-height:2;
+.notes-grid{
 
-    font-size:16px;
+    display:grid;
 
+    grid-template-columns:
+
+    repeat(auto-fit,minmax(220px,1fr));
+
+    gap:25px;
+
+    margin-top:30px;
 
 }
 
+.note-card{
 
-
-
-
-
-
-/* =========================
-   NOTES
-========================= */
-
-
-.note{
-
-
-    margin:20px 0;
-
-
-    padding:22px;
-
-
+    padding:28px;
 
     border-radius:25px;
 
-
-
     background:
 
-    rgba(255,255,255,.12);
-
-
+    rgba(255,255,255,.08);
 
     border:
 
-    1px solid rgba(255,255,255,.2);
-
-
+    1px solid rgba(255,255,255,.15);
 
     transition:.4s;
 
+    backdrop-filter:blur(15px);
 
 }
 
-
-
-.note:hover{
-
+.note-card:hover{
 
     transform:
 
     translateY(-10px);
 
-
     background:
 
-    rgba(255,255,255,.25);
-
-
+    rgba(255,255,255,.14);
 
     box-shadow:
 
-    0 10px 30px rgba(255,255,255,.2);
+    0 20px 40px rgba(0,0,0,.25);
 
+}
+
+.note-card span{
+
+    font-size:2rem;
+
+}
+
+.note-card h3{
+
+    margin:15px 0;
+
+    font-size:1.2rem;
+
+}
+
+.note-card p{
+
+    line-height:1.8;
+
+    color:#f1ebff;
+
+}
+
+
+
+
+/*==================================================
+            REASONS
+==================================================*/
+
+.reason-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+    margin-top:30px;
+
+}
+
+.reason{
+
+    padding:18px 25px;
+
+    border-radius:18px;
+
+    background:
+
+    rgba(255,255,255,.08);
+
+    border:
+
+    1px solid rgba(255,255,255,.15);
+
+    transition:.35s;
+
+    text-align:left;
+
+    font-size:1rem;
+
+}
+
+.reason:hover{
+
+    transform:
+
+    translateX(10px);
+
+    background:
+
+    rgba(255,255,255,.15);
+
+}
+
+
+
+
+/*==================================================
+            MOBILE
+==================================================*/
+
+@media(max-width:768px){
+
+.hero h1{
+
+    font-size:3rem;
+
+}
+
+.hero h2{
+
+    font-size:1.5rem;
+
+}
+
+.glass-card{
+
+    padding:30px;
+
+}
+
+.letter{
+
+    text-align:center;
+
+}
+
+}
+
+/*==================================================
+                GALLERY SECTION
+==================================================*/
+
+.gallery-section{
+
+    width:min(92%,1000px);
+
+    margin:0 auto 60px;
+
+}
+
+.gallery-text{
+
+    margin:18px auto 35px;
+
+    max-width:650px;
+
+    line-height:1.9;
+
+    color:#efe8ff;
+
+    opacity:.9;
 
 }
 
@@ -632,59 +725,63 @@ button:hover{
 
 
 
-
-
-/* =========================
-   GALLERY FIX
-========================= */
+/*==================================================
+                IMAGE SLIDER
+==================================================*/
 
 .slider{
 
-    width:100%;
-    height:500px;
-
     position:relative;
+
+    width:100%;
+
+    height:650px;
 
     overflow:hidden;
 
     border-radius:30px;
 
-    background:rgba(0,0,0,0.25);
+    background:rgba(255,255,255,.06);
 
-    display:flex;
+    border:1px solid rgba(255,255,255,.15);
 
-    justify-content:center;
+    box-shadow:
 
-    align-items:center;
+    0 20px 60px rgba(0,0,0,.35);
 
 }
+
+
 
 
 
 .slider img{
 
+    position:absolute;
+
+    inset:0;
+
     width:100%;
 
     height:100%;
-
-    position:absolute;
-
-    top:0;
-    left:0;
-
 
     object-fit:contain;
 
     object-position:center;
 
-
     opacity:0;
 
-    transition:1.5s;
+    transition:
 
-    border-radius:30px;
+    opacity 1.2s ease,
+
+    transform 8s ease;
+
+    padding:18px;
 
 }
+
+
 
 
 
@@ -692,21 +789,187 @@ button:hover{
 
     opacity:1;
 
+    transform:scale(1.03);
+
 }
 
-/* =========================
-   FOOTER
-========================= */
 
 
-.footer h3{
 
+
+/*==================================================
+                WISH SECTION
+==================================================*/
+
+.wish-section{
+
+    width:min(92%,1000px);
+
+    margin:0 auto 60px;
+
+}
+
+.wish-grid{
+
+    display:grid;
+
+    grid-template-columns:
+
+    repeat(auto-fit,minmax(240px,1fr));
+
+    gap:25px;
+
+    margin-top:35px;
+
+}
+
+.wish-card{
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    border-radius:28px;
+
+    padding:35px 25px;
+
+    text-align:center;
+
+    backdrop-filter:blur(20px);
+
+    transition:.4s;
+
+}
+
+.wish-card:hover{
+
+    transform:
+
+    translateY(-12px);
+
+    box-shadow:
+
+    0 20px 40px rgba(199,125,255,.25);
+
+}
+
+.emoji{
+
+    font-size:2.7rem;
+
+    margin-bottom:18px;
+
+}
+
+.wish-card h3{
+
+    margin-bottom:12px;
+
+    font-size:1.35rem;
+
+}
+
+.wish-card p{
+
+    line-height:1.8;
+
+    color:#f4edff;
+
+}
+
+
+
+
+
+/*==================================================
+                QUOTE
+==================================================*/
+
+.quote-section{
+
+    width:min(92%,850px);
+
+    margin:0 auto 60px;
+
+}
+
+.quote-section h2{
+
+    font-size:2rem;
+
+    font-weight:500;
+
+    line-height:1.8;
+
+    color:#ffffff;
+
+    text-align:center;
+
+    text-shadow:
+
+    0 0 25px rgba(255,180,255,.35);
+
+}
+
+
+
+
+
+/*==================================================
+                ENDING SECTION
+==================================================*/
+
+.ending-section{
+
+    width:min(92%,850px);
+
+    margin:0 auto 60px;
+
+}
+
+.ending-section p{
 
     margin-top:20px;
 
+    line-height:2;
 
-    font-size:25px;
+    color:#efe7ff;
 
+}
+
+
+
+
+
+/*==================================================
+                IMAGE GLOW
+==================================================*/
+
+.slider::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:30px;
+
+    pointer-events:none;
+
+    background:
+
+    linear-gradient(
+
+    180deg,
+
+    rgba(255,255,255,.08),
+
+    transparent,
+
+    rgba(255,255,255,.05)
+
+    );
 
 }
 
@@ -714,66 +977,435 @@ button:hover{
 
 
 
+/*==================================================
+                RESPONSIVE
+==================================================*/
 
-/* =========================
-   MOBILE DESIGN
-========================= */
-
-
-@media(max-width:600px){
-
-
-
-.card,
-.glass-box{
-
-
-    padding:25px;
-
-    width:92%;
-
-
-}
-
-
-
-.card h1{
-
-
-    font-size:42px;
-
-
-}
-
-
-
-.card h3{
-
-
-    font-size:22px;
-
-
-}
-
-
-
-.glass-box h2{
-
-
-    font-size:25px;
-
-
-}
-
-
+@media(max-width:900px){
 
 .slider{
 
-
-    height:350px;
-
+    height:500px;
 
 }
 
+}
+
+@media(max-width:600px){
+
+.slider{
+
+    height:360px;
+
+}
+
+.quote-section h2{
+
+    font-size:1.45rem;
+
+}
+
+.wish-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+}
+
+/*==================================================
+                MUSIC SECTION
+==================================================*/
+
+.music-section,
+.final-section,
+.footer{
+
+    width:min(92%,900px);
+
+    margin:0 auto 60px;
+
+}
+
+#musicBtn{
+
+    margin-top:25px;
+
+}
+
+
+
+
+
+/*==================================================
+                FINAL CARD
+==================================================*/
+
+.final-card h2{
+
+    font-size:2.4rem;
+
+    margin-bottom:25px;
+
+}
+
+.final-card p{
+
+    line-height:2.1;
+
+    color:#f3ebff;
+
+}
+
+
+
+
+
+/*==================================================
+                FOOTER
+==================================================*/
+
+.footer{
+
+    padding-bottom:80px;
+
+}
+
+.footer-card{
+
+    text-align:center;
+
+}
+
+.footer-card h2{
+
+    font-size:2rem;
+
+    margin-bottom:20px;
+
+}
+
+.footer-card p{
+
+    line-height:1.9;
+
+    color:#eee;
+
+}
+
+.footer-line{
+
+    width:140px;
+
+    height:2px;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        #ffffff,
+        transparent
+    );
+
+    margin:30px auto;
+
+}
+
+.footer-card h3{
+
+    font-size:1.3rem;
+
+    font-weight:600;
+
+}
+
+.copyright{
+
+    margin-top:20px;
+
+    opacity:.7;
+
+    font-size:.9rem;
+
+}
+
+
+
+
+
+/*==================================================
+                FLOATING HEARTS
+==================================================*/
+
+.hearts{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+    z-index:3;
+
+}
+
+.heart{
+
+    position:absolute;
+
+    bottom:-40px;
+
+    animation:floatHeart linear forwards;
+
+    filter:drop-shadow(0 0 12px rgba(255,255,255,.7));
+
+}
+
+@keyframes floatHeart{
+
+0%{
+
+transform:
+translateY(0)
+scale(.8)
+rotate(0deg);
+
+opacity:0;
+
+}
+
+15%{
+
+opacity:1;
+
+}
+
+100%{
+
+transform:
+translateY(-120vh)
+scale(1.5)
+rotate(360deg);
+
+opacity:0;
+
+}
+
+}
+
+
+
+
+
+/*==================================================
+             SHOOTING STAR
+==================================================*/
+
+.shooting-star{
+
+    position:fixed;
+
+    width:3px;
+
+    height:120px;
+
+    background:linear-gradient(
+
+        transparent,
+
+        rgba(255,255,255,.95)
+
+    );
+
+    border-radius:50px;
+
+    transform:rotate(45deg);
+
+    opacity:.9;
+
+    pointer-events:none;
+
+    z-index:2;
+
+    animation:shoot 2.5s linear forwards;
+
+}
+
+@keyframes shoot{
+
+0%{
+
+transform:
+translate(0,0)
+rotate(45deg);
+
+opacity:0;
+
+}
+
+10%{
+
+opacity:1;
+
+}
+
+100%{
+
+transform:
+translate(700px,700px)
+rotate(45deg);
+
+opacity:0;
+
+}
+
+}
+
+
+
+
+
+/*==================================================
+                FADE ANIMATION
+==================================================*/
+
+.glass-card{
+
+    animation:fadeUp .9s ease;
+
+}
+
+@keyframes fadeUp{
+
+0%{
+
+opacity:0;
+
+transform:
+translateY(30px);
+
+}
+
+100%{
+
+opacity:1;
+
+transform:
+translateY(0);
+
+}
+
+}
+
+
+
+
+
+/*==================================================
+                CUSTOM SCROLLBAR
+==================================================*/
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#0c061a;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:linear-gradient(
+
+        #9d4edd,
+
+        #c77dff
+
+    );
+
+    border-radius:50px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#d291ff;
+
+}
+
+
+
+
+
+/*==================================================
+                TEXT SELECTION
+==================================================*/
+
+::selection{
+
+    background:#b5179e;
+
+    color:#fff;
+
+}
+
+
+
+
+
+/*==================================================
+                MOBILE
+==================================================*/
+
+@media(max-width:768px){
+
+.hero{
+
+padding:20px;
+
+}
+
+.glass-card{
+
+padding:25px;
+
+border-radius:25px;
+
+}
+
+.hero h1{
+
+font-size:2.7rem;
+
+}
+
+.hero-text{
+
+font-size:.95rem;
+
+}
+
+button{
+
+width:100%;
+
+}
+
+.footer-card h2{
+
+font-size:1.6rem;
+
+}
+
+.final-card h2{
+
+font-size:2rem;
+
+}
 
 }
