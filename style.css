@@ -1,27 +1,55 @@
+/* =========================
+   GLOBAL SETTINGS
+========================= */
+
+
 *{
+
     margin:0;
     padding:0;
     box-sizing:border-box;
     font-family:'Poppins',sans-serif;
+
 }
+
+
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
 
 
 body{
 
     min-height:100vh;
 
-    background:
-    linear-gradient(135deg,#8e2de2,#ff6fd8);
-
     color:white;
 
     overflow-x:hidden;
+
+
+    background:
+
+    radial-gradient(circle at top left,#ffb6f9,transparent 35%),
+
+    radial-gradient(circle at bottom right,#8e2de2,transparent 40%),
+
+    linear-gradient(135deg,#240046,#7209b7);
+
 
 }
 
 
 
-/* Fireworks Canvas */
+
+
+/* =========================
+   FIREWORK CANVAS
+========================= */
+
 
 #fireworks{
 
@@ -43,20 +71,22 @@ body{
 
 
 
-/* Hearts */
+/* =========================
+   FLOATING HEARTS
+========================= */
+
 
 .hearts{
 
     position:fixed;
 
-    width:100%;
-    height:100%;
+    inset:0;
 
     overflow:hidden;
 
-    z-index:1;
-
     pointer-events:none;
+
+    z-index:2;
 
 }
 
@@ -66,11 +96,14 @@ body{
 
     position:absolute;
 
-    bottom:-20px;
-
-    font-size:25px;
+    bottom:-40px;
 
     animation:floatHeart linear forwards;
+
+    filter:
+
+    drop-shadow(0 0 12px rgba(255,255,255,.8));
+
 
 }
 
@@ -81,18 +114,44 @@ body{
 
     0%{
 
-        transform:translateY(0) scale(1);
+        transform:
+
+        translateY(0)
+
+        rotate(0deg)
+
+        scale(.8);
+
+
+        opacity:0;
+
+
+    }
+
+
+    20%{
 
         opacity:1;
 
     }
 
 
+
     100%{
 
-        transform:translateY(-110vh) scale(1.5);
+
+        transform:
+
+        translateY(-120vh)
+
+        rotate(360deg)
+
+        scale(1.6);
+
+
 
         opacity:0;
+
 
     }
 
@@ -103,7 +162,11 @@ body{
 
 
 
-/* Main Container */
+
+
+/* =========================
+   MAIN CONTAINER
+========================= */
 
 
 .container{
@@ -116,11 +179,12 @@ body{
 
     align-items:center;
 
-    padding:20px;
+    padding:30px;
 
     position:relative;
 
-    z-index:2;
+    z-index:5;
+
 
 }
 
@@ -128,7 +192,11 @@ body{
 
 
 
-/* Glass Cards */
+
+
+/* =========================
+   GLASS EFFECT
+========================= */
 
 
 .card,
@@ -137,32 +205,58 @@ body{
 
     width:90%;
 
-    max-width:650px;
-
-    padding:35px;
+    max-width:700px;
 
     margin:25px auto;
 
-
-    background:rgba(255,255,255,0.18);
-
-
-    backdrop-filter:blur(15px);
-
-    -webkit-backdrop-filter:blur(15px);
+    padding:35px;
 
 
-    border:1px solid rgba(255,255,255,0.35);
+
+    background:
+
+    linear-gradient(
+
+    135deg,
+
+    rgba(255,255,255,.25),
+
+    rgba(255,255,255,.08)
+
+    );
 
 
-    border-radius:30px;
+
+    backdrop-filter:blur(25px);
+
+    -webkit-backdrop-filter:blur(25px);
+
+
+
+    border:
+
+    1px solid rgba(255,255,255,.35);
+
+
+
+    border-radius:35px;
+
 
 
     box-shadow:
-    0 15px 40px rgba(0,0,0,0.25);
 
 
-    text-align:center;
+    0 25px 60px rgba(0,0,0,.35),
+
+
+    inset 0 0 40px rgba(255,255,255,.12);
+
+
+
+    position:relative;
+
+    overflow:hidden;
+
 
 
 }
@@ -171,9 +265,112 @@ body{
 
 
 
+
+/* Glass Shine */
+
+
+.card::before,
+.glass-box::before{
+
+
+    content:"";
+
+    position:absolute;
+
+
+    width:200px;
+
+    height:200px;
+
+
+    background:
+
+    rgba(255,255,255,.15);
+
+
+
+    border-radius:50%;
+
+
+    top:-100px;
+
+    right:-100px;
+
+
+
+    filter:blur(10px);
+
+
+}
+
+
+
+
+
+
+
+
+/* =========================
+   MAIN CARD
+========================= */
+
+
+.card{
+
+    text-align:center;
+
+    animation:
+
+    cardAppear 1.5s ease;
+
+
+}
+
+
+
+
+@keyframes cardAppear{
+
+
+from{
+
+    opacity:0;
+
+    transform:
+
+    translateY(50px)
+
+    scale(.8);
+
+}
+
+
+
+to{
+
+    opacity:1;
+
+    transform:
+
+    translateY(0)
+
+    scale(1);
+
+}
+
+
+}
+
+
+
+
 .card h3{
 
-    font-size:25px;
+
+    font-size:28px;
+
+    letter-spacing:1px;
+
 
 }
 
@@ -181,21 +378,33 @@ body{
 
 .card h1{
 
-    font-size:55px;
 
-    margin:15px 0;
+    margin:20px 0;
 
-    color:#fff;
+
+    font-size:65px;
+
+
+    font-weight:700;
+
+
+    text-shadow:
+
+
+    0 0 20px rgba(255,255,255,.5);
+
 
 }
 
 
 
-.intro{
+.card p{
 
-    line-height:1.8;
 
-    margin-bottom:25px;
+    line-height:2;
+
+    font-size:17px;
+
 
 }
 
@@ -203,26 +412,49 @@ body{
 
 
 
-/* Button */
+/* =========================
+   BUTTON
+========================= */
 
 
 button{
 
 
-    padding:15px 35px;
+    margin-top:30px;
+
+
+    padding:16px 40px;
+
 
     border:none;
+
 
     border-radius:50px;
 
 
-    background:white;
+
+    background:
+
+    linear-gradient(
+
+    45deg,
+
+    #ffffff,
+
+    #ffd6ff
+
+    );
 
 
-    color:#9b00ff;
+
+    color:#7209b7;
 
 
-    font-size:17px;
+
+    font-size:18px;
+
+
+    font-weight:600;
 
 
     cursor:pointer;
@@ -231,17 +463,30 @@ button{
     transition:.4s;
 
 
+    box-shadow:
+
+    0 10px 30px rgba(255,255,255,.3);
+
+
 }
+
 
 
 
 button:hover{
 
 
-    transform:scale(1.1);
+    transform:
+
+    translateY(-5px)
+
+    scale(1.05);
 
 
-    box-shadow:0 0 25px white;
+
+    box-shadow:
+
+    0 0 40px white;
 
 
 }
@@ -250,7 +495,10 @@ button:hover{
 
 
 
-/* Hidden Section */
+
+/* =========================
+   HIDDEN SECTION
+========================= */
 
 
 .hidden{
@@ -261,29 +509,45 @@ button:hover{
 
 
 
-
-
 #giftSection{
+
 
     position:relative;
 
-    z-index:2;
+    z-index:5;
 
-    padding-bottom:30px;
+    padding-bottom:50px;
+
 
 }
 
 
 
 
-/* Text */
+
+
+/* =========================
+   TEXT BOXES
+========================= */
+
+
+.glass-box{
+
+
+    text-align:center;
+
+
+}
+
 
 
 .glass-box h2{
 
-    margin-bottom:20px;
 
-    font-size:28px;
+    font-size:32px;
+
+    margin-bottom:25px;
+
 
 }
 
@@ -291,7 +555,11 @@ button:hover{
 
 .glass-box p{
 
-    line-height:1.9;
+
+    line-height:2;
+
+    font-size:16px;
+
 
 }
 
@@ -299,22 +567,37 @@ button:hover{
 
 
 
-/* Notes */
 
 
-.notes .note{
+/* =========================
+   NOTES
+========================= */
 
 
-    background:rgba(255,255,255,0.15);
+.note{
 
 
-    padding:20px;
+    margin:20px 0;
 
 
-    margin:15px 0;
+    padding:22px;
 
 
-    border-radius:20px;
+
+    border-radius:25px;
+
+
+
+    background:
+
+    rgba(255,255,255,.12);
+
+
+
+    border:
+
+    1px solid rgba(255,255,255,.2);
+
 
 
     transition:.4s;
@@ -327,10 +610,20 @@ button:hover{
 .note:hover{
 
 
-    transform:translateY(-8px);
+    transform:
+
+    translateY(-10px);
 
 
-    background:rgba(255,255,255,0.3);
+    background:
+
+    rgba(255,255,255,.25);
+
+
+
+    box-shadow:
+
+    0 10px 30px rgba(255,255,255,.2);
 
 
 }
@@ -339,7 +632,11 @@ button:hover{
 
 
 
-/* Gallery */
+
+
+/* =========================
+   GALLERY
+========================= */
 
 
 .slider{
@@ -347,15 +644,21 @@ button:hover{
 
     width:100%;
 
-    height:450px;
+
+    height:500px;
+
 
     position:relative;
 
+
     overflow:hidden;
 
-    border-radius:25px;
 
-    background:rgba(0,0,0,0.2);
+    border-radius:30px;
+
+
+    margin-top:20px;
+
 
 
 }
@@ -367,24 +670,23 @@ button:hover{
 
     width:100%;
 
+
     height:100%;
-
-
-    object-fit:cover;
 
 
     position:absolute;
 
 
-    top:0;
+    object-fit:cover;
 
-    left:0;
+
+    border-radius:30px;
 
 
     opacity:0;
 
 
-    transition:1s;
+    transition:1.5s;
 
 
 }
@@ -397,18 +699,29 @@ button:hover{
     opacity:1;
 
 
+    transform:scale(1.03);
+
+
 }
 
 
 
 
 
-/* Footer */
+
+/* =========================
+   FOOTER
+========================= */
 
 
 .footer h3{
 
+
+    margin-top:20px;
+
+
     font-size:25px;
+
 
 }
 
@@ -416,34 +729,66 @@ button:hover{
 
 
 
-/* Mobile */
+
+/* =========================
+   MOBILE DESIGN
+========================= */
 
 
 @media(max-width:600px){
 
 
-    .card h1{
 
-        font-size:40px;
-
-    }
+.card,
+.glass-box{
 
 
+    padding:25px;
 
-    .slider{
+    width:92%;
 
-        height:350px;
 
-    }
+}
 
 
 
-    .glass-box,
-    .card{
+.card h1{
 
-        padding:25px;
 
-    }
+    font-size:42px;
+
+
+}
+
+
+
+.card h3{
+
+
+    font-size:22px;
+
+
+}
+
+
+
+.glass-box h2{
+
+
+    font-size:25px;
+
+
+}
+
+
+
+.slider{
+
+
+    height:350px;
+
+
+}
 
 
 }
