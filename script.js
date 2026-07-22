@@ -59,3 +59,83 @@ function createHeart(){
 }
 
 setInterval(createHeart,500);
+
+const canvas = document.getElementById("fireworks");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+
+let particles=[];
+
+
+function firework(){
+
+    let x=Math.random()*canvas.width;
+    let y=Math.random()*canvas.height/2;
+
+    for(let i=0;i<80;i++){
+
+        particles.push({
+
+            x:x,
+            y:y,
+
+            dx:(Math.random()-0.5)*8,
+            dy:(Math.random()-0.5)*8,
+
+            life:100
+
+        });
+
+    }
+
+}
+
+
+function animate(){
+
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+
+
+    particles.forEach((p,index)=>{
+
+        ctx.beginPath();
+
+        ctx.arc(p.x,p.y,3,0,Math.PI*2);
+
+        ctx.fillStyle="white";
+
+        ctx.fill();
+
+
+        p.x+=p.dx;
+        p.y+=p.dy;
+
+        p.life--;
+
+
+        if(p.life<=0){
+            particles.splice(index,1);
+        }
+
+    });
+
+
+    requestAnimationFrame(animate);
+
+}
+
+
+setInterval(firework,1500);
+
+animate();
+
+
+window.addEventListener("resize",()=>{
+
+    canvas.width=window.innerWidth;
+    canvas.height=window.innerHeight;
+
+});
