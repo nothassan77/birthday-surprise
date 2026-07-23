@@ -873,3 +873,29 @@ if (cakeBtn && cake) {
     });
 
 }
+
+/* ===========================
+        BIRTHDAY CAKE
+=========================== */
+
+if (cakeBtn && cake) {
+
+    cakeBtn.addEventListener("click", () => {
+
+        // Cake cut animation
+        cake.classList.add("cut");
+
+        // Change button
+        cakeBtn.textContent = "🎉 Happy Birthday!";
+        cakeBtn.disabled = true;
+
+        // Fireworks
+        for (let i = 0; i < 12; i++) {
+            setTimeout(() => {
+                createFirework();
+            }, i * 180);
+        }
+
+    });
+
+}
