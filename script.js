@@ -30,6 +30,9 @@ const sliderImages = document.querySelectorAll(".slider img");
 const fireworksCanvas = document.getElementById("fireworks");
 const ctx = fireworksCanvas.getContext("2d");
 
+const cakeBtn = document.getElementById("cakeBtn");
+const cake = document.getElementById("cake");
+
 
 
 /*====================================
@@ -839,3 +842,34 @@ console.log(
 ====================================*/
 
 console.log("Website Loaded Successfully ✅");
+
+/* =====================================
+            BIRTHDAY CAKE
+===================================== */
+
+if (cakeBtn && cake) {
+
+    cakeBtn.addEventListener("click", () => {
+
+        // Cake Cut Animation
+        cake.classList.add("cut");
+
+        // Button Change
+        cakeBtn.textContent = "🎉 Happy Birthday!";
+
+        cakeBtn.disabled = true;
+
+        // Fireworks
+        for (let i = 0; i < 12; i++) {
+
+            setTimeout(() => {
+
+                createFirework();
+
+            }, i * 180);
+
+        }
+
+    });
+
+}
