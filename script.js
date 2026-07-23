@@ -16,22 +16,19 @@ const mainContent = document.getElementById("mainContent");
 
 const beginBtn = document.getElementById("beginBtn");
 const giftBtn = document.getElementById("giftBtn");
-
 const giftSection = document.getElementById("giftSection");
 
 const musicBtn = document.getElementById("musicBtn");
 const birthdayMusic = document.getElementById("birthdayMusic");
 
 const cakeBtn = document.getElementById("cakeBtn");
+const cake = document.getElementById("cake");
 const flame = document.querySelector(".flame");
 
 const sliderImages = document.querySelectorAll(".slider img");
 
 const fireworksCanvas = document.getElementById("fireworks");
 const ctx = fireworksCanvas.getContext("2d");
-
-const cakeBtn = document.getElementById("cakeBtn");
-const cake = document.getElementById("cake");
 
 
 
