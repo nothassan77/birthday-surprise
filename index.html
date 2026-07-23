@@ -7,531 +7,945 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="A Special Birthday Surprise">
+    <meta name="description"
+        content="A Special Birthday Surprise For Maham">
 
-    <meta name="theme-color" content="#5b2a86">
+    <meta name="theme-color"
+        content="#5b2a86">
 
     <title>Happy Birthday Maham 💜</title>
 
     <!-- Google Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
 
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect"
+        href="https://fonts.googleapis.com">
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
 
-    <!-- Main CSS -->
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+
+    <link rel="stylesheet"
+        href="style.css">
 
 </head>
 
 <body>
 
-    <!-- Background Effects -->
+
+    <!-- ===============================
+            BACKGROUND EFFECTS
+    ================================ -->
 
     <canvas id="fireworks"></canvas>
 
-    <div class="galaxy"></div>
+    <div class="galaxy-bg"></div>
 
     <div class="stars"></div>
 
-    <div class="twinkling"></div>
+    <div class="shooting-stars"></div>
 
     <div class="hearts"></div>
 
 
 
-    <!-- Hero Section -->
+    <!-- ===============================
+            LOADING SCREEN
+    ================================ -->
 
-    <main class="hero">
+    <div id="loadingScreen">
 
-        <div class="glass-card">
+        <div class="loader">
 
-            <span class="tag">
-                ✨ A Special Birthday Surprise ✨
-            </span>
+            <h2>Loading Your Surprise...</h2>
 
-            <h2>Happy Birthday</h2>
+            <div class="loading-heart">
+                💜
+            </div>
 
-            <h1>Maham 💜</h1>
+            <p>
 
-            <p class="hero-text">
-
-                Today is all about celebrating someone truly special.
-
-                <br><br>
-
-                I made a little surprise just for you.
-
-                <br><br>
-
-                I hope it brings a smile to your face.
-
-            </p>
-
-            <button id="giftBtn">
-
-                🎁 Open Your Surprise
-
-            </button>
-
-        </div>
-
-    </main>
-
-
-
-    <!-- Hidden Content Starts Here -->
-
-    <section id="giftSection" class="hidden">
-            <!-- =========================================
-            BIRTHDAY LETTER
-    ========================================== -->
-
-    <section class="message-section">
-
-        <div class="glass-card">
-
-            <span class="section-tag">
-                💌 A Letter For You
-            </span>
-
-            <h2>Happy Birthday Maham 💜</h2>
-
-            <p class="letter">
-
-                Happy Birthday to someone truly special.
-
-                <br><br>
-
-                I hope today brings you endless happiness,
-                beautiful memories and lots of smiles.
-
-                <br><br>
-
-                Thank you for every conversation,
-                every laugh and every wonderful memory.
-
-                <br><br>
-
-                Keep smiling, keep shining and
-                always believe in yourself.
-
-                <br><br>
-
-                May all your dreams come true.
-
-                <br><br>
-
-                Wishing you the happiest birthday ever.
-
-                <br><br>
-
-                — Hassan 🌸
+                Preparing something beautiful
+                just for you...
 
             </p>
 
         </div>
 
-    </section>
+    </div>
 
 
 
-    <!-- =========================================
-            BIRTHDAY NOTES
-    ========================================== -->
+    <!-- ===============================
+            INTRO SCREEN
+    ================================ -->
 
-    <section class="notes-section">
+    <section id="introSection">
 
-        <div class="glass-card">
+        <div class="glass-card intro-card">
 
-            <span class="section-tag">
+            <span class="welcome-badge">
 
-                💜 Birthday Notes
-
-            </span>
-
-            <h2>Little Things I Want To Say</h2>
-
-            <div class="notes-grid">
-
-                <div class="note-card">
-
-                    <span>🌸</span>
-
-                    <h3>Stay Happy</h3>
-
-                    <p>
-
-                        Keep smiling because your smile
-                        makes every moment beautiful.
-
-                    </p>
-
-                </div>
-
-                <div class="note-card">
-
-                    <span>✨</span>
-
-                    <h3>Believe In Yourself</h3>
-
-                    <p>
-
-                        You are stronger and more amazing
-                        than you think.
-
-                    </p>
-
-                </div>
-
-                <div class="note-card">
-
-                    <span>💖</span>
-
-                    <h3>Keep Shining</h3>
-
-                    <p>
-
-                        Never stop being the wonderful
-                        person you are.
-
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =========================================
-            REASONS SECTION
-    ========================================== -->
-
-    <section class="reasons-section">
-
-        <div class="glass-card">
-
-            <span class="section-tag">
-
-                🌌 Reasons You're Special
+                ✨ Welcome ✨
 
             </span>
 
-            <h2>Just A Few Reasons...</h2>
+            <h1>
 
-            <div class="reason-list">
+                Happy Birthday
 
-                <div class="reason">
-                    💜 Your beautiful smile.
-                </div>
-
-                <div class="reason">
-                    🌸 Your kind heart.
-                </div>
-
-                <div class="reason">
-                    ✨ Your positive energy.
-                </div>
-
-                <div class="reason">
-                    🌙 Every beautiful memory.
-                </div>
-
-                <div class="reason">
-                    💫 Simply because you're you.
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-            <!-- =========================================
-            BEAUTIFUL MEMORIES
-    ========================================== -->
-
-    <section class="gallery-section">
-
-        <div class="glass-card">
-
-            <span class="section-tag">
-                📸 Beautiful Memories
-            </span>
-
-            <h2>Every Picture Tells A Story</h2>
-
-            <p class="gallery-text">
-
-                Some memories never fade.
-                Every picture reminds me of a beautiful moment.
-
-            </p>
-
-            <div class="slider">
-
-                <img src="images/photo1.jpg" alt="Memory 1" class="active">
-
-                <img src="images/photo2.jpg" alt="Memory 2">
-
-                <img src="images/photo3.jpg" alt="Memory 3">
-
-                <img src="images/photo4.jpg" alt="Memory 4">
-
-                <img src="images/photo5.jpg" alt="Memory 5">
-
-                <img src="images/photo6.jpg" alt="Memory 6">
-
-                <img src="images/photo7.jpg" alt="Memory 7">
-
-                <img src="images/photo8.jpg" alt="Memory 8">
-
-                <img src="images/photo9.jpg" alt="Memory 9">
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =========================================
-            MY WISHES
-    ========================================== -->
-
-    <section class="wish-section">
-
-        <div class="glass-card">
-
-            <span class="section-tag">
-                🌠 My Wishes
-            </span>
-
-            <h2>What I Wish For You</h2>
-
-            <div class="wish-grid">
-
-                <div class="wish-card">
-
-                    <div class="emoji">🌸</div>
-
-                    <h3>Happiness</h3>
-
-                    <p>
-                        May every day bring you happiness,
-                        peace and beautiful moments.
-                    </p>
-
-                </div>
-
-                <div class="wish-card">
-
-                    <div class="emoji">✨</div>
-
-                    <h3>Success</h3>
-
-                    <p>
-                        May every dream you have
-                        become a beautiful reality.
-                    </p>
-
-                </div>
-
-                <div class="wish-card">
-
-                    <div class="emoji">💜</div>
-
-                    <h3>Smile Always</h3>
-
-                    <p>
-                        Keep smiling because your smile
-                        lights up every moment.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =========================================
-            SPECIAL QUOTE
-    ========================================== -->
-
-    <section class="quote-section">
-
-        <div class="glass-card">
+            </h1>
 
             <h2>
 
-                "Every star shines differently,
-                and your light is one of the most beautiful."
+                Maham 💜
 
             </h2>
 
-        </div>
-
-    </section>
-
-
-
-    <!-- =========================================
-            ENDING MESSAGE
-    ========================================== -->
-
-    <section class="ending-section">
-
-        <div class="glass-card">
-
-            <h2>💖 Thank You</h2>
-
             <p>
 
-                Thank you for being a part of so many
-                beautiful memories.
+                Someone spent time creating
+                a little surprise for you.
 
                 <br><br>
 
-                I hope this little surprise makes
-                your birthday even more special.
-
-                <br><br>
-
-                Happy Birthday once again. 🌸
+                I hope it makes you smile.
 
             </p>
 
-        </div>
+            <button id="beginBtn">
 
-    </section>
-            <!-- =========================================
-            MUSIC SECTION
-    ========================================== -->
+                💜 Begin The Surprise
 
-    <section class="music-section">
-
-        <div class="glass-card">
-
-            <span class="section-tag">
-                🎵 Background Music
-            </span>
-
-            <h2>Enjoy The Moment</h2>
-
-            <p>
-
-                Click the button below to play a beautiful
-                background melody while exploring this surprise.
-
-            </p>
-
-            <button id="musicBtn">
-                🎶 Play Music
             </button>
 
-            <audio id="birthdayMusic" loop>
-
-                <source src="music/birthday.mp3" type="audio/mpeg">
-
-                Your browser does not support the audio element.
-
-            </audio>
-
         </div>
 
     </section>
 
 
 
-    <!-- =========================================
-            FINAL WISH
-    ========================================== -->
+    <!-- ===============================
+            MAIN WEBSITE
+    ================================ -->
 
-    <section class="final-section">
+    <main id="mainContent" class="hidden">
 
-        <div class="glass-card final-card">
+                <!-- ===============================
+                HERO SECTION
+        ================================ -->
 
-            <h2>🌙 One Last Wish...</h2>
+        <section class="hero-section">
 
-            <p>
+            <div class="glass-card hero-card">
 
-                May every sunrise bring you hope.
+                <span class="hero-tag">
 
-                <br><br>
+                    🎂 It's Your Special Day 🎂
 
-                May every sunset leave you with
-                beautiful memories.
+                </span>
 
-                <br><br>
+                <h1>
 
-                Keep smiling.
+                    Happy Birthday
+                    <br>
+                    Maham 💜
 
-                Keep shining.
+                </h1>
 
-                Keep being yourself.
+                <p class="hero-text">
 
-                <br><br>
+                    Today isn't just another day.
 
-                Happy Birthday Maham 💜
+                    <br><br>
 
-            </p>
+                    It's a celebration of someone
+                    truly amazing.
 
-        </div>
+                    <br><br>
 
-    </section>
+                    I made this little website
+                    especially for you.
+
+                </p>
+
+                <button id="giftBtn">
+
+                    🎁 Open Your Surprise
+
+                </button>
+
+            </div>
+
+        </section>
 
 
 
-    <!-- =========================================
+        <!-- ===============================
+                BIRTHDAY LETTER
+        ================================ -->
+
+        <section id="giftSection" class="hidden">
+
+            <div class="glass-card message-card">
+
+                <span class="section-title">
+
+                    💌 A Letter For You
+
+                </span>
+
+                <h2>
+
+                    Dear Maham 💜
+
+                </h2>
+
+                <p class="letter">
+
+                    Happy Birthday!
+
+                    <br><br>
+
+                    I hope today brings you
+                    endless happiness,
+                    beautiful memories,
+                    and countless smiles.
+
+                    <br><br>
+
+                    Thank you for always being
+                    such a wonderful person.
+
+                    <br><br>
+
+                    Keep smiling.
+
+                    Keep shining.
+
+                    Keep believing in yourself.
+
+                    <br><br>
+
+                    May all your dreams come true.
+
+                    <br><br>
+
+                    Enjoy every moment of your
+                    special day.
+
+                    <br><br>
+
+                    — Hassan 🌸
+
+                </p>
+
+            </div>
+
+                    <!-- ===============================
+                BIRTHDAY NOTES
+        ================================ -->
+
+        <section class="notes-section">
+
+            <div class="glass-card">
+
+                <span class="section-title">
+
+                    💜 Birthday Notes
+
+                </span>
+
+                <h2>
+
+                    A Few Little Wishes
+
+                </h2>
+
+                <div class="notes-grid">
+
+                    <div class="note-card">
+
+                        <span>🌸</span>
+
+                        <h3>Stay Happy</h3>
+
+                        <p>
+
+                            May your smile always stay
+                            as beautiful as it is today.
+
+                        </p>
+
+                    </div>
+
+                    <div class="note-card">
+
+                        <span>✨</span>
+
+                        <h3>Keep Shining</h3>
+
+                        <p>
+
+                            Never stop believing in
+                            yourself because you're amazing.
+
+                        </p>
+
+                    </div>
+
+                    <div class="note-card">
+
+                        <span>💜</span>
+
+                        <h3>Dream Big</h3>
+
+                        <p>
+
+                            I hope every dream you have
+                            becomes reality.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ===============================
+                PHOTO GALLERY
+        ================================ -->
+
+        <section class="gallery-section">
+
+            <div class="glass-card">
+
+                <span class="section-title">
+
+                    📸 Beautiful Memories
+
+                </span>
+
+                <h2>
+
+                    Every Picture Has A Story
+
+                </h2>
+
+                <p class="gallery-text">
+
+                    Every memory is special,
+                    and every smile deserves to
+                    be remembered forever.
+
+                </p>
+
+                <div class="slider">
+
+                    <img src="images/photo1.jpg"
+                        class="active"
+                        alt="Photo 1"
+                        loading="lazy">
+
+                    <img src="images/photo2.jpg"
+                        alt="Photo 2"
+                        loading="lazy">
+
+                    <img src="images/photo3.jpg"
+                        alt="Photo 3"
+                        loading="lazy">
+
+                    <img src="images/photo4.jpg"
+                        alt="Photo 4"
+                        loading="lazy">
+
+                    <img src="images/photo5.jpg"
+                        alt="Photo 5"
+                        loading="lazy">
+
+                    <img src="images/photo6.jpg"
+                        alt="Photo 6"
+                        loading="lazy">
+
+                    <img src="images/photo7.jpg"
+                        alt="Photo 7"
+                        loading="lazy">
+
+                    <img src="images/photo8.jpg"
+                        alt="Photo 8"
+                        loading="lazy">
+
+                    <img src="images/photo9.jpg"
+                        alt="Photo 9"
+                        loading="lazy">
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ===============================
+                SPECIAL WISHES
+        ================================ -->
+
+        <section class="wishes-section">
+
+            <div class="glass-card">
+
+                <span class="section-title">
+
+                    🌠 My Wishes
+
+                </span>
+
+                <h2>
+
+                    Always Remember...
+
+                </h2>
+
+                <div class="wish-grid">
+
+                    <div class="wish-card">
+
+                        <div class="emoji">💖</div>
+
+                        <h3>Be Happy</h3>
+
+                        <p>
+
+                            Happiness looks beautiful
+                            on you.
+
+                        </p>
+
+                    </div>
+
+                    <div class="wish-card">
+
+                        <div class="emoji">🌸</div>
+
+                        <h3>Stay Kind</h3>
+
+                        <p>
+
+                            Your kindness makes this
+                            world brighter.
+
+                        </p>
+
+                    </div>
+
+                    <div class="wish-card">
+
+                        <div class="emoji">✨</div>
+
+                        <h3>Never Give Up</h3>
+
+                        <p>
+
+                            Believe in yourself because
+                            you can achieve anything.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+                    <!-- ===============================
+                WHY YOU'RE SPECIAL
+        ================================ -->
+
+        <section class="special-section">
+
+            <div class="glass-card">
+
+                <span class="section-title">
+
+                    💜 Why You're Special
+
+                </span>
+
+                <h2>
+
+                    Just A Few Reasons...
+
+                </h2>
+
+                <div class="reason-grid">
+
+                    <div class="reason-card">
+
+                        <span>😊</span>
+
+                        <p>Your smile brightens every moment.</p>
+
+                    </div>
+
+                    <div class="reason-card">
+
+                        <span>🌸</span>
+
+                        <p>Your kindness makes everyone feel comfortable.</p>
+
+                    </div>
+
+                    <div class="reason-card">
+
+                        <span>✨</span>
+
+                        <p>You inspire people without even realizing it.</p>
+
+                    </div>
+
+                    <div class="reason-card">
+
+                        <span>💜</span>
+
+                        <p>Simply because you're wonderfully unique.</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ===============================
+                SPECIAL QUOTE
+        ================================ -->
+
+        <section class="quote-section">
+
+            <div class="glass-card quote-card">
+
+                <h2>
+
+                    "Every star shines differently,
+                    and your light is one of the
+                    most beautiful."
+
+                </h2>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ===============================
+                BIRTHDAY CAKE
+        ================================ -->
+
+        <section class="cake-section">
+
+            <div class="glass-card">
+
+                <span class="section-title">
+
+                    🎂 Birthday Cake
+
+                </span>
+
+                <h2>
+
+                    Make A Birthday Wish
+
+                </h2>
+
+                <div class="cake-container">
+
+                    <div class="cake">
+
+                        <div class="candle">
+
+                            <div class="flame"></div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <button id="cakeBtn">
+
+                    🕯 Blow The Candle
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ===============================
+                BALLOONS
+        ================================ -->
+
+        <section class="balloon-section">
+
+            <div class="glass-card">
+
+                <span class="section-title">
+
+                    🎈 Birthday Balloons
+
+                </span>
+
+                <h2>
+
+                    A Sky Full Of Celebrations
+
+                </h2>
+
+                <div class="balloons">
+
+                    <div class="balloon balloon1"></div>
+
+                    <div class="balloon balloon2"></div>
+
+                    <div class="balloon balloon3"></div>
+
+                    <div class="balloon balloon4"></div>
+
+                    <div class="balloon balloon5"></div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+                    <!-- ===============================
+                MUSIC SECTION
+        ================================ -->
+
+        <section class="music-section">
+
+            <div class="glass-card">
+
+                <span class="section-title">
+
+                    🎵 Background Music
+
+                </span>
+
+                <h2>
+
+                    Enjoy The Moment
+
+                </h2>
+
+                <p>
+
+                    Turn on the music and enjoy
+                    this little surprise.
+
+                </p>
+
+                <button id="musicBtn">
+
+                    🎶 Play Music
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ===============================
+                BEAUTIFUL MEMORIES
+        ================================ -->
+
+        <section class="timeline-section">
+
+            <div class="glass-card">
+
+                <span class="section-title">
+
+                    🌸 Beautiful Memories
+
+                </span>
+
+                <h2>
+
+                    Some Moments Stay Forever
+
+                </h2>
+
+                <div class="timeline">
+
+                    <div class="timeline-item">
+
+                        <span>💜</span>
+
+                        <p>
+
+                            Every conversation became
+                            a beautiful memory.
+
+                        </p>
+
+                    </div>
+
+                    <div class="timeline-item">
+
+                        <span>🌙</span>
+
+                        <p>
+
+                            Every smile made the day
+                            a little brighter.
+
+                        </p>
+
+                    </div>
+
+                    <div class="timeline-item">
+
+                        <span>✨</span>
+
+                        <p>
+
+                            Every little moment
+                            became unforgettable.
+
+                        </p>
+
+                    </div>
+
+                    <div class="timeline-item">
+
+                        <span>🌸</span>
+
+                        <p>
+
+                            And today is another
+                            beautiful memory.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ===============================
+                PROMISE CARDS
+        ================================ -->
+
+        <section class="promise-section">
+
+            <div class="glass-card">
+
+                <span class="section-title">
+
+                    💖 Little Promises
+
+                </span>
+
+                <h2>
+
+                    Always Remember...
+
+                </h2>
+
+                <div class="promise-grid">
+
+                    <div class="promise-card">
+
+                        <span>😊</span>
+
+                        <h3>Keep Smiling</h3>
+
+                        <p>
+
+                            Because your smile
+                            is priceless.
+
+                        </p>
+
+                    </div>
+
+                    <div class="promise-card">
+
+                        <span>🌸</span>
+
+                        <h3>Stay Yourself</h3>
+
+                        <p>
+
+                            You're amazing just
+                            the way you are.
+
+                        </p>
+
+                    </div>
+
+                    <div class="promise-card">
+
+                        <span>✨</span>
+
+                        <h3>Dream Big</h3>
+
+                        <p>
+
+                            Your future is
+                            brighter than the stars.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ===============================
+                FINAL MESSAGE
+        ================================ -->
+
+        <section class="final-message">
+
+            <div class="glass-card">
+
+                <h2>
+
+                    💜 One Last Thing...
+
+                </h2>
+
+                <p>
+
+                    Thank you for taking the time
+                    to explore this little surprise.
+
+                    <br><br>
+
+                    I hope it made your birthday
+                    a little more special.
+
+                    <br><br>
+
+                    Keep smiling.
+                    Keep shining.
+                    Keep being yourself.
+
+                    <br><br>
+
+                    Happy Birthday Once Again,
+                    Maham. 🎂💜
+
+                </p>
+
+            </div>
+
+        </section>
+
+                    <!-- ===============================
                 FOOTER
-    ========================================== -->
+        ================================ -->
 
-    <footer class="footer">
+        <footer class="footer">
 
-        <div class="glass-card footer-card">
+            <div class="glass-card footer-card">
 
-            <h2>✨ Thank You ✨</h2>
+                <h2>
 
-            <p>
+                    ✨ Thank You ✨
 
-                This little website was made with love,
-                just to make you smile.
+                </h2>
 
-            </p>
+                <p>
 
-            <div class="footer-line"></div>
+                    This little website was made
+                    with love, care and lots of
+                    good wishes.
 
-            <h3>
-                Made with 💜 by Hassan
-            </h3>
+                    <br><br>
 
-            <p class="copyright">
-                © 2026 • Happy Birthday Maham
-            </p>
+                    I hope it brought a smile
+                    to your face.
 
-        </div>
+                </p>
 
-    </footer>
+                <div class="footer-line"></div>
 
-    <!-- End Gift Section -->
+                <h3>
+
+                    Made With 💜 By Hassan
+
+                </h3>
+
+                <p class="copyright">
+
+                    © 2026 • Happy Birthday Maham
+
+                </p>
+
+            </div>
+
+        </footer>
 
     </section>
 
-    <!-- JavaScript -->
+    <!-- ===============================
+            AUDIO
+    ================================ -->
 
-    <script src="script.js"></script>
+    <audio id="birthdayMusic" loop preload="auto">
+
+        <source
+            src="music/birthday.mp3"
+            type="audio/mpeg">
+
+        Your browser does not support
+        the audio element.
+
+    </audio>
+
+</main>
+
+
+
+<!-- ===============================
+        JAVASCRIPT
+================================ -->
+
+<script src="script.js"></script>
 
 </body>
 
 </html>
-        
-    
