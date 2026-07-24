@@ -3004,8 +3004,11 @@ z-index:6;
 /* Open */
 
 .envelope.open .envelope-flap{
-
-transform:rotateX(180deg);
+    transform: rotateX(180deg);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform .8s ease, opacity .3s ease .5s;
+}
 
 }
 
