@@ -47,17 +47,22 @@ body{
 
 :root{
 
-    --purple:#c77dff;
-    --purple-light:#e0aaff;
-    --dark:#170021;
-    --glass:rgba(255,255,255,.08);
-    --border:rgba(255,255,255,.18);
-    --shadow:0 20px 45px rgba(0,0,0,.35);
+    --purple:#8b5cf6;
+    --purple-light:#d8b4fe;
+    --purple-dark:#4c1d95;
+    --purple-deep:#140722;
+
+    --pink:#ec4899;
+    --blue:#7c3aed;
+
+    --dark:#090313;
+
+    --glass:rgba(255,255,255,.06);
+    --border:rgba(255,255,255,.12);
+
+    --shadow:0 25px 70px rgba(139,92,246,.35);
 
 }
-
-
-
 
 /*==============================
         SCROLLBAR
