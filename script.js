@@ -10,8 +10,6 @@
         DOM ELEMENTS
 ====================================*/
 
-alert("Script Started");
-
 const loadingScreen = document.getElementById("loadingScreen");
 const introSection = document.getElementById("introSection");
 const mainContent = document.getElementById("mainContent");
