@@ -86,6 +86,29 @@ window.addEventListener("load", () => {
         BEGIN BUTTON
 ====================================*/
 
+/* ===========================
+      LETTER OPEN
+=========================== */
+
+const letterBtn = document.getElementById("letterBtn");
+const letterCard = document.getElementById("letterCard");
+
+if (letterBtn && letterCard) {
+    letterBtn.addEventListener("click", () => {
+
+        letterCard.classList.add("open");
+
+        letterBtn.textContent = "💜 Letter Opened";
+        letterBtn.disabled = true;
+
+        letterCard.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+        });
+
+    });
+}
+
 beginBtn.addEventListener("click", () => {
 
     introSection.style.display = "none";
