@@ -920,3 +920,36 @@ if (cakeBtn && cake) {
 
 }
 
+/* ===========================
+   PREMIUM SHOOTING STARS
+=========================== */
+
+const shootingStars = document.querySelector(".shooting-stars");
+
+function createShootingStar() {
+
+    if (!shootingStars) return;
+
+    const star = document.createElement("div");
+    star.className = "shooting-star";
+
+    star.style.top = Math.random() * 35 + "%";
+    star.style.left = (70 + Math.random() * 30) + "%";
+
+    shootingStars.appendChild(star);
+
+    setTimeout(() => {
+        star.remove();
+    }, 2200);
+
+}
+
+// First star after page loads
+setTimeout(createShootingStar, 2500);
+
+// Random shooting stars forever
+setInterval(() => {
+
+    createShootingStar();
+
+}, 8000 + Math.random() * 7000);
