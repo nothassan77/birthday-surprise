@@ -6134,5 +6134,13 @@ transform:scale(1.08);
 }
 
 .wax-seal{
+
+        /* Hide top flap when letter is open */
+
+.envelope.open .envelope-flap{
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s ease;
+}
     z-index:5;
 }
