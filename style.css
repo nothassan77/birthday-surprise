@@ -2454,3 +2454,457 @@ button{
     }
 
 }
+
+/* =========================================
+   PREMIUM PARALLAX + PLANETS
+========================================= */
+
+.parallax-layer{
+    position:absolute;
+    inset:-10%;
+    pointer-events:none;
+    transition:transform .25s linear;
+}
+
+.layer1{
+    background:
+    radial-gradient(circle at 20% 30%,rgba(255,255,255,.05),transparent 45%);
+    animation:floatLayer1 18s ease-in-out infinite alternate;
+}
+
+.layer2{
+    background:
+    radial-gradient(circle at 75% 70%,rgba(120,180,255,.08),transparent 45%);
+    animation:floatLayer2 24s ease-in-out infinite alternate;
+}
+
+.layer3{
+    background:
+    radial-gradient(circle at 50% 50%,rgba(180,80,255,.06),transparent 50%);
+    animation:floatLayer3 30s ease-in-out infinite alternate;
+}
+
+@keyframes floatLayer1{
+    from{transform:translate(0,0);}
+    to{transform:translate(35px,-20px);}
+}
+
+@keyframes floatLayer2{
+    from{transform:translate(0,0);}
+    to{transform:translate(-30px,30px);}
+}
+
+@keyframes floatLayer3{
+    from{transform:translate(0,0);}
+    to{transform:translate(20px,40px);}
+}
+
+/* =======================
+   PLANETS
+======================= */
+
+.planet{
+    position:absolute;
+    border-radius:50%;
+    filter:blur(.2px);
+    animation:planetFloat 14s ease-in-out infinite alternate;
+}
+
+.planet1{
+    width:120px;
+    height:120px;
+    top:10%;
+    right:8%;
+    background:
+    radial-gradient(circle at 35% 35%,#b8d7ff,#3456ff 70%,#16245f);
+    box-shadow:0 0 45px rgba(100,150,255,.35);
+}
+
+.planet2{
+    width:80px;
+    height:80px;
+    bottom:12%;
+    left:8%;
+    background:
+    radial-gradient(circle at 35% 35%,#ffd6ff,#c04dff 70%,#53146c);
+    box-shadow:0 0 35px rgba(200,80,255,.30);
+    animation-duration:20s;
+}
+
+/* =======================
+   MOON
+======================= */
+
+.moon{
+    position:absolute;
+    width:70px;
+    height:70px;
+    border-radius:50%;
+    top:18%;
+    left:20%;
+    background:
+    radial-gradient(circle at 30% 30%,#ffffff,#d9d9d9 75%);
+    box-shadow:0 0 40px rgba(255,255,255,.35);
+}
+
+@keyframes planetFloat{
+
+    from{
+        transform:translateY(0);
+    }
+
+    to{
+        transform:translateY(-18px);
+    }
+
+}
+
+/* =========================================
+   SPACE DUST + AURORA + PREMIUM GLOW
+========================================= */
+
+.space-dust{
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    opacity:.35;
+    background-image:
+        radial-gradient(1px 1px at 10% 20%,rgba(255,255,255,.8),transparent),
+        radial-gradient(1.5px 1.5px at 25% 80%,rgba(255,255,255,.6),transparent),
+        radial-gradient(2px 2px at 60% 30%,rgba(255,255,255,.5),transparent),
+        radial-gradient(1px 1px at 75% 65%,rgba(255,255,255,.8),transparent),
+        radial-gradient(2px 2px at 90% 10%,rgba(255,255,255,.6),transparent);
+    animation:dustMove 40s linear infinite;
+}
+
+@keyframes dustMove{
+    from{
+        transform:translateY(0);
+    }
+    to{
+        transform:translateY(-80px);
+    }
+}
+
+/* ===========================
+   AURORA
+=========================== */
+
+.aurora{
+    position:absolute;
+    width:60vw;
+    height:60vw;
+    border-radius:50%;
+    filter:blur(90px);
+    opacity:.18;
+    mix-blend-mode:screen;
+}
+
+.aurora1{
+    top:-15%;
+    left:5%;
+    background:#00ffd5;
+    animation:auroraFloat1 18s ease-in-out infinite alternate;
+}
+
+.aurora2{
+    bottom:-20%;
+    right:5%;
+    background:#ff3efc;
+    animation:auroraFloat2 22s ease-in-out infinite alternate;
+}
+
+@keyframes auroraFloat1{
+    from{
+        transform:translate(0,0) scale(1);
+    }
+    to{
+        transform:translate(80px,40px) scale(1.2);
+    }
+}
+
+@keyframes auroraFloat2{
+    from{
+        transform:translate(0,0) scale(1);
+    }
+    to{
+        transform:translate(-60px,-40px) scale(1.15);
+    }
+}
+
+/* ===========================
+   PREMIUM SPACE GLOW
+=========================== */
+
+.space-glow{
+    position:absolute;
+    inset:0;
+    background:
+        radial-gradient(circle at 50% 50%,
+        rgba(110,70,255,.08),
+        transparent 60%);
+    animation:spaceGlow 8s ease-in-out infinite alternate;
+}
+
+@keyframes spaceGlow{
+
+    from{
+        opacity:.5;
+        transform:scale(1);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1.08);
+    }
+
+}
+
+/* =========================================
+   GLOW RINGS + COSMIC FOG + GALAXY NOISE
+========================================= */
+
+.glow-ring{
+    position:absolute;
+    border:2px solid rgba(255,255,255,.08);
+    border-radius:50%;
+    animation:ringFloat 18s ease-in-out infinite alternate;
+}
+
+.glow1{
+    width:320px;
+    height:320px;
+    top:8%;
+    right:5%;
+    box-shadow:0 0 60px rgba(120,180,255,.18);
+}
+
+.glow2{
+    width:220px;
+    height:220px;
+    bottom:10%;
+    left:6%;
+    box-shadow:0 0 50px rgba(180,80,255,.20);
+    animation-duration:24s;
+}
+
+@keyframes ringFloat{
+
+    from{
+        transform:translateY(0) rotate(0deg);
+    }
+
+    to{
+        transform:translateY(-20px) rotate(8deg);
+    }
+
+}
+
+/* ===========================
+   COSMIC FOG
+=========================== */
+
+.space-fog{
+    position:absolute;
+    inset:-20%;
+    background:
+        radial-gradient(circle at 30% 30%,rgba(255,255,255,.04),transparent 45%),
+        radial-gradient(circle at 70% 70%,rgba(180,120,255,.05),transparent 45%);
+    filter:blur(70px);
+    opacity:.45;
+    animation:fogMove 35s ease-in-out infinite alternate;
+}
+
+@keyframes fogMove{
+
+    from{
+        transform:translate(0,0);
+    }
+
+    to{
+        transform:translate(50px,-40px);
+    }
+
+}
+
+/* ===========================
+   GALAXY NOISE
+=========================== */
+
+.galaxy-noise{
+    position:absolute;
+    inset:0;
+    opacity:.03;
+    background-image:
+        radial-gradient(#ffffff 1px,transparent 1px);
+    background-size:22px 22px;
+    animation:noiseMove 25s linear infinite;
+}
+
+@keyframes noiseMove{
+
+    from{
+        background-position:0 0;
+    }
+
+    to{
+        background-position:220px 220px;
+    }
+
+}
+
+/* ===========================
+   COSMIC BLUR
+=========================== */
+
+.cosmic-blur{
+    position:absolute;
+    width:260px;
+    height:260px;
+    border-radius:50%;
+    filter:blur(90px);
+    opacity:.18;
+}
+
+.blur1{
+    top:15%;
+    left:12%;
+    background:#6f5cff;
+}
+
+.blur2{
+    bottom:15%;
+    right:12%;
+    background:#00cfff;
+}
+
+/* =========================================
+   FINAL PREMIUM EFFECTS
+========================================= */
+
+/* Glass Glow */
+
+.galaxy-bg::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    background:
+        radial-gradient(circle at center,
+        rgba(255,255,255,.04),
+        transparent 60%);
+    animation:centerGlow 10s ease-in-out infinite alternate;
+}
+
+@keyframes centerGlow{
+
+    from{
+        opacity:.5;
+        transform:scale(1);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1.12);
+    }
+
+}
+
+/* Premium Vignette */
+
+.galaxy-bg::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    background:
+        radial-gradient(circle,
+        transparent 45%,
+        rgba(0,0,0,.55) 100%);
+}
+
+/* Better Twinkling */
+
+.stars,
+.stars-back,
+.stars-front{
+
+    animation:
+    twinkle 5s ease-in-out infinite alternate,
+    starFloat 30s linear infinite;
+
+}
+
+@keyframes starFloat{
+
+    from{
+        transform:translateY(0);
+    }
+
+    to{
+        transform:translateY(-40px);
+    }
+
+}
+
+/* Planets */
+
+.planet{
+
+    will-change:transform;
+
+}
+
+/* Aurora */
+
+.aurora{
+
+    will-change:transform;
+
+}
+
+/* Performance */
+
+.galaxy-bg,
+.nebula,
+.space-dust,
+.space-fog,
+.aurora,
+.parallax-layer{
+
+    transform:translateZ(0);
+
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+    .planet1{
+
+        width:90px;
+        height:90px;
+
+    }
+
+    .planet2{
+
+        width:60px;
+        height:60px;
+
+    }
+
+    .moon{
+
+        width:50px;
+        height:50px;
+
+    }
+
+    .glow-ring{
+
+        display:none;
+
+    }
+
+}
