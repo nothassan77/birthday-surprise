@@ -25,6 +25,10 @@ const cakeBtn = document.getElementById("cakeBtn");
 const cake = document.getElementById("cake");
 const flame = document.querySelector(".flame");
 
+const letterBtn = document.getElementById("letterBtn");
+const envelope = document.getElementById("envelope");
+const letterPaper = document.querySelector(".letter-paper");
+
 const sliderImages = document.querySelectorAll(".slider img");
 
 const fireworksCanvas = document.getElementById("fireworks");
@@ -915,6 +919,20 @@ if (cakeBtn && cake) {
                 createFirework();
             }, i * 180);
         }
+
+    });
+
+}
+
+if (letterBtn && envelope && letterPaper) {
+
+    letterBtn.addEventListener("click", () => {
+
+        envelope.classList.add("open");
+
+        letterPaper.classList.add("show");
+
+        letterBtn.style.display = "none";
 
     });
 
