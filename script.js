@@ -1374,4 +1374,165 @@ document.body.classList.add("website-loaded");
 
 console.log("✨ Premium Birthday Website Loaded Successfully");
 
-// End of JavaScript
+/* ===========================
+   PREMIUM CAKE ANIMATION
+=========================== */
+
+const wishBtn = document.getElementById("wishBtn");
+const cutCakeBtn = document.getElementById("cutCakeBtn");
+
+const knife = document.getElementById("cakeKnife");
+const cake = document.getElementById("birthdayCake");
+const message = document.getElementById("cakeMessage");
+
+const flames = document.querySelectorAll(".flame");
+
+let wishDone = false;
+let cakeCut = false;
+
+/* Make A Wish */
+
+wishBtn.addEventListener("click",()=>{
+
+    if(wishDone) return;
+
+    wishDone=true;
+
+    wishBtn.innerHTML="💜 Wish Made";
+
+    flames.forEach((flame,index)=>{
+
+        setTimeout(()=>{
+
+            flame.style.opacity="0";
+
+            flame.style.transform="translateX(-50%) scale(.2)";
+
+        },index*300);
+
+    });
+
+});
+
+/* Cut Cake */
+
+cutCakeBtn.addEventListener("click",()=>{
+
+    if(cakeCut) return;
+
+    cakeCut=true;
+
+    /* Knife Animation */
+
+    knife.style.left="35px";
+
+    setTimeout(()=>{
+
+        knife.style.left="250px";
+
+    },900);
+
+    /* Cake Animation */
+
+    setTimeout(()=>{
+
+        cake.style.transform="scale(.96) rotate(-1deg)";
+
+        cake.style.transition=".4s";
+
+    },700);
+
+    setTimeout(()=>{
+
+        cake.style.transform="scale(1)";
+
+    },1100);
+
+    /* Show Message */
+
+    setTimeout(()=>{
+
+        message.classList.add("show");
+
+    },1500);
+
+    /* Fireworks */
+
+    if(typeof createFirework==="function"){
+
+        for(let i=0;i<10;i++){
+
+            setTimeout(()=>{
+
+                createFirework(
+
+                    Math.random()*window.innerWidth,
+
+                    Math.random()*window.innerHeight/2
+
+                );
+
+            },i*200);
+
+        }
+
+    }
+
+    /* Confetti */
+
+    createConfetti();
+
+});
+
+/* ===========================
+      CONFETTI
+=========================== */
+
+function createConfetti(){
+
+    for(let i=0;i<120;i++){
+
+        const conf=document.createElement("div");
+
+        conf.className="confetti";
+
+        conf.style.left=Math.random()*100+"vw";
+
+        conf.style.top="-20px";
+
+        conf.style.width=(6+Math.random()*8)+"px";
+
+        conf.style.height=conf.style.width;
+
+        conf.style.position="fixed";
+
+        conf.style.borderRadius="50%";
+
+        conf.style.pointerEvents="none";
+
+        conf.style.zIndex="99999";
+
+        conf.style.background=`hsl(${Math.random()*360},100%,70%)`;
+
+        conf.style.transition="4s linear";
+
+        document.body.appendChild(conf);
+
+        requestAnimationFrame(()=>{
+
+            conf.style.transform=`translateY(${window.innerHeight+100}px)
+            rotate(${Math.random()*720}deg)`;
+
+            conf.style.opacity="0";
+
+        });
+
+        setTimeout(()=>{
+
+            conf.remove();
+
+        },4200);
+
+    }
+
+}
