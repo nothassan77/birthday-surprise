@@ -920,16 +920,3 @@ if (cakeBtn && cake) {
 
 }
 
-if (letterBtn && envelope && letterPaper) {
-
-    letterBtn.addEventListener("click", () => {
-
-        envelope.classList.add("open");
-
-        letterPaper.classList.add("show");
-
-        letterBtn.style.display = "none";
-
-    });
-
-}
