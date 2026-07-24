@@ -953,3 +953,246 @@ setInterval(() => {
     createShootingStar();
 
 }, 8000 + Math.random() * 7000);
+
+/* =========================================
+   FINAL PREMIUM EFFECTS
+========================================= */
+
+/* Glass Glow */
+
+.galaxy-bg::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    background:
+        radial-gradient(circle at center,
+        rgba(255,255,255,.04),
+        transparent 60%);
+    animation:centerGlow 10s ease-in-out infinite alternate;
+}
+
+@keyframes centerGlow{
+
+    from{
+        opacity:.5;
+        transform:scale(1);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1.12);
+    }
+
+}
+
+/* Premium Vignette */
+
+.galaxy-bg::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    background:
+        radial-gradient(circle,
+        transparent 45%,
+        rgba(0,0,0,.55) 100%);
+}
+
+/* Better Twinkling */
+
+.stars,
+.stars-back,
+.stars-front{
+
+    animation:
+    twinkle 5s ease-in-out infinite alternate,
+    starFloat 30s linear infinite;
+
+}
+
+@keyframes starFloat{
+
+    from{
+        transform:translateY(0);
+    }
+
+    to{
+        transform:translateY(-40px);
+    }
+
+}
+
+/* Planets */
+
+.planet{
+
+    will-change:transform;
+
+}
+
+/* Aurora */
+
+.aurora{
+
+    will-change:transform;
+
+}
+
+/* Performance */
+
+.galaxy-bg,
+.nebula,
+.space-dust,
+.space-fog,
+.aurora,
+.parallax-layer{
+
+    transform:translateZ(0);
+
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+    .planet1{
+
+        width:90px;
+        height:90px;
+
+    }
+
+    .planet2{
+
+        width:60px;
+        height:60px;
+
+    }
+
+    .moon{
+
+        width:50px;
+        height:50px;
+
+    }
+
+    .glow-ring{
+
+        display:none;
+
+    }
+
+}
+
+        /* =========================================
+   ADVANCED SHOOTING STARS
+========================================= */
+
+const shootingContainer = document.querySelector(".shooting-stars");
+
+function createAdvancedStar() {
+
+    if (!shootingContainer) return;
+
+    const star = document.createElement("div");
+    star.className = "shooting-star";
+
+    star.style.top = Math.random() * 40 + "%";
+    star.style.left = (75 + Math.random() * 20) + "%";
+
+    const size = 120 + Math.random() * 120;
+
+    star.style.width = size + "px";
+
+    shootingContainer.appendChild(star);
+
+    setTimeout(() => {
+
+        star.remove();
+
+    }, 2200);
+
+}
+
+setInterval(() => {
+
+    createAdvancedStar();
+
+}, 7000 + Math.random() * 8000);
+
+
+/* =========================================
+   STAR TWINKLE RANDOMIZER
+========================================= */
+
+const allStars = document.querySelectorAll(".stars");
+
+setInterval(() => {
+
+    allStars.forEach(star => {
+
+        star.style.opacity =
+        (0.55 + Math.random() * 0.45).toFixed(2);
+
+    });
+
+}, 1800);
+
+
+/* =========================================
+   PLANET GLOW EFFECT
+========================================= */
+
+const planetsGlow = document.querySelectorAll(".planet");
+
+setInterval(() => {
+
+    planetsGlow.forEach(planet => {
+
+        const glow = 25 + Math.random() * 30;
+
+        planet.style.filter =
+        `drop-shadow(0 0 ${glow}px rgba(255,255,255,.35))`;
+
+    });
+
+}, 2200);
+
+
+/* =========================================
+   AURORA BRIGHTNESS
+========================================= */
+
+const auroraGlow = document.querySelectorAll(".aurora");
+
+setInterval(() => {
+
+    auroraGlow.forEach(item => {
+
+        item.style.opacity =
+        0.12 + Math.random() * 0.15;
+
+    });
+
+}, 2500);
+
+
+/* =========================================
+   PERFORMANCE
+========================================= */
+
+window.addEventListener("blur", () => {
+
+    document.body.style.animationPlayState = "paused";
+
+});
+
+window.addEventListener("focus", () => {
+
+    document.body.style.animationPlayState = "running";
+
+});
+
+
+console.log("🌌 Premium Galaxy Phase 1 Loaded Successfully");
