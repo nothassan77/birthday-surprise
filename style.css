@@ -6147,3 +6147,277 @@ transform:scale(1.08);
 }
     z-index:5;
 }
+
+/* =========================
+   PREMIUM CAKE SECTION
+========================= */
+
+.cake-section{
+    padding:100px 20px;
+}
+
+.cake-card{
+    max-width:900px;
+    margin:auto;
+    text-align:center;
+}
+
+.cake-scene{
+    position:relative;
+    width:320px;
+    height:340px;
+    margin:50px auto;
+}
+
+/* Cake */
+
+.birthday-cake{
+    position:relative;
+    width:220px;
+    margin:auto;
+}
+
+/* Bottom */
+
+.cake-bottom{
+    width:220px;
+    height:120px;
+    border-radius:0 0 35px 35px;
+    background:linear-gradient(135deg,#8f35ff,#ff49cf);
+    box-shadow:
+    0 20px 40px rgba(0,0,0,.35),
+    inset 0 0 25px rgba(255,255,255,.15);
+}
+
+/* Top */
+
+.cake-top{
+    width:190px;
+    height:70px;
+    margin:auto;
+    border-radius:25px 25px 10px 10px;
+    background:linear-gradient(135deg,#ffffff,#ffe4ff);
+    position:relative;
+}
+
+.icing{
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:-10px;
+    height:20px;
+    background:#fff;
+    border-radius:20px;
+}
+
+/* Candles */
+
+.candles{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    margin-bottom:10px;
+}
+
+.candle{
+    width:10px;
+    height:45px;
+    border-radius:10px;
+    background:linear-gradient(#ff9af8,#ffffff);
+    position:relative;
+}
+
+.flame{
+    position:absolute;
+    top:-18px;
+    left:50%;
+    transform:translateX(-50%);
+    width:14px;
+    height:20px;
+    border-radius:50%;
+    background:gold;
+    box-shadow:
+    0 0 12px gold,
+    0 0 28px orange;
+    animation:flicker .15s infinite alternate;
+}
+
+@keyframes flicker{
+
+0%{
+transform:translateX(-50%) scale(1);
+}
+
+100%{
+transform:translateX(-50%) scale(1.15);
+}
+
+}
+
+/* Knife */
+
+.knife{
+    position:absolute;
+    width:150px;
+    height:6px;
+    background:silver;
+    border-radius:10px;
+    top:110px;
+    left:-170px;
+    transition:1s;
+}
+
+.knife::after{
+
+content:"";
+
+position:absolute;
+
+right:-18px;
+
+top:-6px;
+
+width:22px;
+
+height:18px;
+
+background:#444;
+
+border-radius:6px;
+
+}
+
+/* Shadow */
+
+.cake-shadow{
+
+width:190px;
+
+height:18px;
+
+margin:18px auto 0;
+
+background:rgba(0,0,0,.25);
+
+filter:blur(10px);
+
+border-radius:50%;
+
+}
+
+/* Buttons */
+
+.cake-buttons{
+
+display:flex;
+
+justify-content:center;
+
+gap:20px;
+
+flex-wrap:wrap;
+
+margin-top:35px;
+
+}
+
+.cake-buttons button{
+
+padding:15px 35px;
+
+border:none;
+
+border-radius:50px;
+
+font-size:17px;
+
+font-weight:700;
+
+cursor:pointer;
+
+background:linear-gradient(135deg,#8b3dff,#ff3bd4);
+
+color:#fff;
+
+box-shadow:0 10px 30px rgba(170,70,255,.45);
+
+transition:.35s;
+
+}
+
+.cake-buttons button:hover{
+
+transform:translateY(-5px) scale(1.05);
+
+}
+
+/* Message */
+
+.cake-message{
+
+margin-top:45px;
+
+font-size:36px;
+
+font-weight:800;
+
+opacity:0;
+
+transform:translateY(40px);
+
+transition:.8s;
+
+background:linear-gradient(90deg,#fff,#ff8df5,#fff);
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
+text-shadow:0 0 20px rgba(255,255,255,.4);
+
+}
+
+.cake-message.show{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+/* Sparkles */
+
+.cake-sparkles{
+
+position:absolute;
+
+inset:0;
+
+pointer-events:none;
+
+background:
+radial-gradient(circle,#fff 2px,transparent 3px) 20px 40px/80px 80px,
+radial-gradient(circle,#ffd8ff 2px,transparent 3px) 60px 100px/90px 90px,
+radial-gradient(circle,#fff 2px,transparent 3px) 120px 50px/100px 100px;
+
+animation:sparkleMove 5s linear infinite;
+
+opacity:.7;
+
+}
+
+@keyframes sparkleMove{
+
+from{
+
+transform:translateY(0);
+
+}
+
+to{
+
+transform:translateY(-40px);
+
+}
+
+}
