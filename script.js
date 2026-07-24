@@ -25,10 +25,6 @@ const cakeBtn = document.getElementById("cakeBtn");
 const cake = document.getElementById("cake");
 const flame = document.querySelector(".flame");
 
-const letterBtn = document.getElementById("letterBtn");
-const envelope = document.getElementById("envelope");
-const letterPaper = document.querySelector(".letter-paper");
-
 const sliderImages = document.querySelectorAll(".slider img");
 
 const fireworksCanvas = document.getElementById("fireworks");
