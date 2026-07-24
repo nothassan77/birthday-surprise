@@ -6085,40 +6085,6 @@ transform:scale(1.08);
 
 }
 
-/* ===== Envelope Fix ===== */
-
-.envelope{
-    position:relative;
-    overflow:hidden;
-}
-
-.letter{
-    position:absolute !important;
-    left:50%;
-    bottom:20px;
-    width:82%;
-    transform:translateX(-50%);
-    transition:.8s ease;
-    z-index:2;
-}
-
-.envelope.open .letter{
-    transform:translateX(-50%) translateY(-120px);
-}
-
-.envelope-front{
-    z-index:3;
-}
-
-.envelope-flap{
-    z-index:4;
-    transform-origin:top;
-}
-
-.envelope.open .envelope-flap{
-    transform:rotateX(180deg);
-}
-
 /* ===== Premium Envelope Fix ===== */
 
 .envelope{
