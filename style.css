@@ -2260,72 +2260,89 @@ line-height:1.9;
 
 }
 
-/*==================================================
-        CSS PART 8
-        LUXURY ENVELOPE + SECRET LETTER
-==================================================*/
+/*==================================
+      PREMIUM LETTER SECTION
+==================================*/
 
-/* Letter Section */
-
-.letter-section{
-
-position:relative;
-
-z-index:10;
-
+#letterSection{
+    padding:80px 20px;
+    display:flex;
+    justify-content:center;
 }
-
-/* Main Card */
 
 .letter-card{
 
-max-width:1200px;
+    width:100%;
+    max-width:700px;
 
-margin:auto;
+    padding:40px;
 
-padding:70px 40px;
+    border-radius:30px;
 
-text-align:center;
+    background:rgba(255,255,255,.08);
 
-border-radius:32px;
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
 
-position:relative;
+    border:1px solid rgba(255,255,255,.15);
 
-overflow:hidden;
+    box-shadow:
+    0 20px 60px rgba(0,0,0,.25);
 
-}
-
-/* Envelope Area */
-
-.envelope-wrapper{
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-margin:70px 0;
-
-perspective:1400px;
+    text-align:center;
 
 }
 
-/* Envelope */
+.letter-tag{
+
+    display:inline-block;
+
+    padding:12px 24px;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.12);
+
+    color:#fff;
+
+    font-weight:600;
+
+}
+
+.letter-card h2{
+
+    color:#fff;
+
+    font-size:42px;
+
+    margin:25px 0 15px;
+
+}
+
+.letter-subtitle{
+
+    color:rgba(255,255,255,.85);
+
+    line-height:1.8;
+
+    font-size:18px;
+
+    margin-bottom:45px;
+
+}
+
+/*==============================
+        Envelope
+==============================*/
 
 .envelope{
 
-position:relative;
+    position:relative;
 
-width:360px;
+    width:340px;
+    height:240px;
 
-height:250px;
-
-transform-style:preserve-3d;
-
-transition:1s;
-
-cursor:pointer;
+    margin:0 auto 40px;
 
 }
 
@@ -2333,83 +2350,16 @@ cursor:pointer;
 
 .envelope-back{
 
-position:absolute;
+    position:absolute;
 
-inset:0;
+    inset:0;
 
-background:linear-gradient(
-135deg,
-#4c1d95,
-#7b2cff);
+    background:linear-gradient(
+    135deg,
+    #6d28d9,
+    #9333ea);
 
-border-radius:18px;
-
-box-shadow:
-
-0 20px 45px rgba(0,0,0,.4),
-
-0 0 35px rgba(123,44,255,.4);
-
-}
-
-/* Front */
-
-.envelope-front{
-
-position:absolute;
-
-bottom:0;
-
-width:100%;
-
-height:60%;
-
-background:linear-gradient(
-135deg,
-#6d28d9,
-#a855f7);
-
-clip-path:polygon(0 0,100% 0,50% 100%);
-
-z-index:5;
-
-}
-
-/* Flap */
-
-.envelope-flap{
-
-position:absolute;
-
-top:0;
-
-width:100%;
-
-height:58%;
-
-background:linear-gradient(
-135deg,
-#7b2cff,
-#c026d3);
-
-clip-path:polygon(0 0,100% 0,50% 100%);
-
-transform-origin:top;
-
-transition:.8s;
-
-z-index:6;
-
-}
-
-/* Open */
-
-.envelope.open .envelope-flap{
-    transform: rotateX(180deg);
-    opacity: 0;
-    visibility: hidden;
-    transition: transform .8s ease, opacity .3s ease .5s;
-}
+    border-radius:0 0 18px 18px;
 
 }
 
@@ -2417,76 +2367,124 @@ z-index:6;
 
 .letter-paper{
 
-position:absolute;
+    position:absolute;
 
-left:50%;
+    left:50%;
 
-bottom:15px;
+    top:35px;
 
-transform:translateX(-50%);
+    transform:translateX(-50%);
 
-width:88%;
+    width:280px;
+    height:180px;
 
-height:205px;
+    background:#fff;
 
-padding:22px;
+    border-radius:15px;
 
-background:
+    overflow:hidden;
 
-linear-gradient(
-180deg,
-#ffffff,
-#f7f3ff);
+    z-index:2;
 
-border-radius:18px;
+    transition:.8s;
 
-color:#222;
-
-overflow:auto;
-
-transition:.8s;
-
-z-index:2;
-
-box-shadow:
-
-0 12px 35px rgba(0,0,0,.25);
+    box-shadow:
+    0 15px 30px rgba(0,0,0,.2);
 
 }
 
-.envelope.open .letter-paper{
+.paper-top{
 
-bottom:125px;
+    height:10px;
 
-}
-
-/* Header */
-
-.letter-header{
-
-font-size:1.2rem;
-
-font-weight:700;
-
-margin-bottom:15px;
-
-text-align:center;
-
-color:#7b2cff;
+    background:#e879f9;
 
 }
 
-/* Content */
+.paper-content{
 
-.letter-content{
+    padding:18px;
 
-font-size:.95rem;
+    text-align:left;
 
-line-height:1.9;
+}
 
-white-space:pre-line;
+.paper-content h3{
 
-color:#333;
+    text-align:center;
+
+    color:#7e22ce;
+
+    margin-bottom:15px;
+
+}
+
+.paper-content p{
+
+    color:#555;
+
+    font-size:14px;
+
+    line-height:1.7;
+
+}
+
+.signature{
+
+    text-align:right;
+
+    margin-top:18px;
+
+    font-weight:bold;
+
+}
+
+/* Front */
+
+.envelope-front{
+
+    position:absolute;
+
+    left:0;
+    right:0;
+    bottom:0;
+
+    height:130px;
+
+    background:linear-gradient(
+    135deg,
+    #7c3aed,
+    #a855f7);
+
+    clip-path:polygon(0 0,50% 100%,100% 0,100% 100%,0 100%);
+
+    z-index:3;
+
+}
+
+/* Flap */
+
+.envelope-flap{
+
+    position:absolute;
+
+    top:0;
+
+    width:100%;
+    height:125px;
+
+    background:linear-gradient(
+    135deg,
+    #9333ea,
+    #c026d3);
+
+    clip-path:polygon(0 0,100% 0,50% 100%);
+
+    transform-origin:top;
+
+    transition:.8s;
+
+    z-index:4;
 
 }
 
@@ -2494,189 +2492,126 @@ color:#333;
 
 .wax-seal{
 
-position:absolute;
+    position:absolute;
 
-left:50%;
+    left:50%;
+    top:92px;
 
-top:52%;
+    transform:translateX(-50%);
 
-transform:translate(-50%,-50%);
+    width:60px;
+    height:60px;
 
-width:62px;
+    border-radius:50%;
 
-height:62px;
+    background:linear-gradient(
+    #c026d3,
+    #9333ea);
 
-border-radius:50%;
+    display:flex;
 
-background:linear-gradient(
-135deg,
-#d946ef,
-#7b2cff);
+    align-items:center;
 
-display:flex;
+    justify-content:center;
 
-justify-content:center;
+    font-size:24px;
 
-align-items:center;
+    color:#fff;
 
-font-size:1.3rem;
+    z-index:5;
 
-color:#fff;
-
-z-index:8;
-
-box-shadow:
-
-0 0 25px rgba(217,70,239,.55);
-
-transition:.5s;
+    box-shadow:0 0 25px rgba(192,38,211,.4);
 
 }
 
-.envelope.open .wax-seal{
-
-opacity:0;
-
-transform:
-
-translate(-50%,-50%)
-
-scale(.5);
-
-}
-
-/* Buttons */
+/*=========================
+      Buttons
+=========================*/
 
 .letter-buttons{
 
-display:flex;
+    display:flex;
 
-justify-content:center;
+    gap:20px;
 
-gap:18px;
+    justify-content:center;
 
-flex-wrap:wrap;
-
-margin-top:25px;
+    flex-wrap:wrap;
 
 }
 
 .letter-buttons button{
 
-padding:15px 34px;
+    border:none;
 
-border-radius:50px;
+    padding:16px 35px;
 
-font-size:1rem;
+    border-radius:40px;
 
-font-weight:600;
+    font-size:17px;
 
-background:linear-gradient(
-135deg,
-#7b2cff,
-#d946ef);
+    font-weight:600;
 
-color:#fff;
+    color:#fff;
 
-box-shadow:
+    cursor:pointer;
 
-0 0 25px rgba(168,85,247,.4);
+    background:linear-gradient(
+    90deg,
+    #7c3aed,
+    #d946ef);
 
-transition:.35s;
+    transition:.3s;
 
 }
 
 .letter-buttons button:hover{
 
-transform:
+    transform:translateY(-4px);
 
-translateY(-5px)
-
-scale(1.05);
-
-box-shadow:
-
-0 0 40px rgba(168,85,247,.6);
+    box-shadow:0 12px 25px rgba(217,70,239,.35);
 
 }
 
-/* Decorative Glow */
+/*=========================
+      Open State
+=========================*/
 
-.letter-card::before{
+.envelope.open .envelope-flap{
 
-content:"";
-
-position:absolute;
-
-width:320px;
-
-height:320px;
-
-border-radius:50%;
-
-background:
-
-radial-gradient(circle,
-rgba(168,85,247,.25),
-transparent 70%);
-
-top:-150px;
-
-right:-120px;
-
-filter:blur(35px);
-
-animation:letterGlow 8s ease-in-out infinite;
+    transform:rotateX(180deg);
 
 }
 
-/* Animations */
+.envelope.open .letter-paper{
 
-@keyframes letterGlow{
-
-0%,100%{
-
-transform:translate(0,0);
+    transform:
+    translate(-50%,-120px);
 
 }
 
-50%{
+/*=========================
+      Mobile
+=========================*/
 
-transform:translate(-40px,40px);
-
-}
-
-}
-
-/* Mobile */
-
-@media(max-width:768px){
+@media(max-width:480px){
 
 .envelope{
 
-width:300px;
-
+width:290px;
 height:210px;
 
 }
 
 .letter-paper{
 
-height:170px;
-
-padding:18px;
+width:240px;
 
 }
 
-.letter-buttons{
+.letter-card h2{
 
-flex-direction:column;
-
-}
-
-.letter-buttons button{
-
-width:100%;
+font-size:34px;
 
 }
 
