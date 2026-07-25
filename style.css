@@ -5549,9 +5549,9 @@ transform:scale(1.08);
     z-index:5;
 }
 
-/* ===========================
-      PREMIUM CAKE
-=========================== */
+/* ===================================
+        PREMIUM SVG CAKE
+=================================== */
 
 .cake-section{
 padding:100px 20px;
@@ -5561,273 +5561,176 @@ justify-content:center;
 
 .cake-card{
 width:100%;
-max-width:850px;
+max-width:900px;
 text-align:center;
 }
 
-.cake-area{
-margin-top:50px;
+.cake-wrapper{
 display:flex;
 justify-content:center;
+margin-top:45px;
 }
 
-.birthday-cake{
-position:relative;
-width:320px;
-height:320px;
+#birthdayCakeSVG{
+width:100%;
+max-width:420px;
+overflow:visible;
+filter:
+drop-shadow(0 20px 40px rgba(0,0,0,.35));
 }
 
-/* ========= Candles ========= */
+/* ==========================
+      Cake Layers
+========================== */
 
-.candles{
-position:absolute;
-top:15px;
-left:50%;
-transform:translateX(-50%);
-display:flex;
-gap:18px;
-z-index:20;
-}
+#cakeLeft,
+#cakeRight{
 
-.candle{
-position:relative;
-width:14px;
-height:65px;
-border-radius:20px;
-background:linear-gradient(#ffffff,#ff7df8);
-cursor:pointer;
-transition:.4s;
-}
+transition:1s ease;
 
-.flame{
-position:absolute;
-left:50%;
-top:-22px;
-transform:translateX(-50%);
-width:18px;
-height:24px;
-background:gold;
-border-radius:50% 50% 50% 50%;
-box-shadow:
-0 0 10px gold,
-0 0 25px orange,
-0 0 40px yellow;
-animation:flicker .18s infinite alternate;
-}
+transform-origin:center;
 
-.smoke{
-position:absolute;
-left:50%;
-top:-18px;
-width:10px;
-height:10px;
-border-radius:50%;
-background:#ccc;
-opacity:0;
-transform:translateX(-50%) scale(.2);
-}
-
-.candle.off .flame{
-opacity:0;
-}
-
-.candle.off .smoke{
-animation:smoke .9s forwards;
-}
-
-@keyframes smoke{
-
-0%{
-opacity:1;
-transform:translateX(-50%) scale(.4);
-}
-
-100%{
-opacity:0;
-transform:translateX(-50%) translateY(-40px) scale(2);
-}
+filter:
+drop-shadow(0 10px 18px rgba(0,0,0,.25));
 
 }
 
-@keyframes flicker{
+#cakeSlice{
+
+transition:1s ease;
+
+transform-origin:left center;
+
+}
+
+/* ==========================
+      Cream
+========================== */
+
+#birthdayCakeSVG rect:nth-of-type(3),
+#birthdayCakeSVG rect:nth-of-type(5){
+
+filter:
+drop-shadow(0 0 8px rgba(255,255,255,.8));
+
+}
+
+/* ==========================
+      Cherries
+========================== */
+
+#birthdayCakeSVG circle{
+
+filter:
+drop-shadow(0 0 10px #ff2d55);
+
+animation:
+cherryGlow 2s infinite alternate;
+
+}
+
+@keyframes cherryGlow{
 
 from{
-transform:translateX(-50%) scale(1);
+
+filter:
+drop-shadow(0 0 6px #ff2d55);
+
 }
 
 to{
-transform:translateX(-50%) scale(1.15);
+
+filter:
+drop-shadow(0 0 16px #ff2d55);
+
+}
+
+}
+
+/* ==========================
+      Candles
+========================== */
+
+.candle{
+
+cursor:pointer;
+
+transition:.3s;
+
+transform-origin:center bottom;
+
+}
+
+.candle:hover{
+
+transform:translateY(-4px) scale(1.05);
+
+}
+
+.flame{
+
+filter:
+drop-shadow(0 0 8px gold)
+drop-shadow(0 0 18px orange);
+
+transform-origin:center;
+
+animation:
+flameMove .15s infinite alternate;
+
+transition:.4s;
+
+}
+
+@keyframes flameMove{
+
+from{
+
+transform:scale(1);
+
+}
+
+to{
+
+transform:
+translateY(-2px)
+scale(1.15);
+
 }
 
 }
 
-/* ========= Cake ========= */
+/* Candle Off */
 
-.cake-body{
-
-position:absolute;
-
-bottom:40px;
-
-left:50%;
-
-transform:translateX(-50%);
-
-width:240px;
-
-height:140px;
-
-}
-
-.cake-left,
-.cake-right{
-
-position:absolute;
-
-bottom:0;
-
-width:120px;
-
-height:140px;
-
-background:linear-gradient(180deg,#ffb4ff,#9f48ff);
-
-border-radius:0 0 25px 25px;
-
-transition:1s;
-
-box-shadow:
-0 15px 30px rgba(0,0,0,.25);
-
-}
-
-.cake-left{
-
-left:0;
-
-}
-
-.cake-right{
-
-right:0;
-
-}
-
-.cream{
-
-position:absolute;
-
-top:-18px;
-
-left:0;
-
-width:240px;
-
-height:30px;
-
-background:white;
-
-border-radius:25px;
-
-}
-
-.plate{
-
-position:absolute;
-
-bottom:-18px;
-
-left:50%;
-
-transform:translateX(-50%);
-
-width:280px;
-
-height:18px;
-
-background:#ddd;
-
-border-radius:50%;
-
-}
-
-/* ========= Slice ========= */
-
-.cake-slice{
-
-position:absolute;
-
-right:25px;
-
-bottom:0;
-
-width:55px;
-
-height:120px;
-
-background:linear-gradient(#ffb4ff,#9f48ff);
-
-clip-path:polygon(0 0,100% 50%,0 100%);
+.candle.off .flame{
 
 opacity:0;
 
-transition:1s;
+transform:
+scale(.2);
 
 }
 
-/* ========= Knife ========= */
+/* ==========================
+      Knife
+========================== */
 
-.knife{
+#knife{
 
-position:absolute;
+transition:1s ease;
 
-left:-180px;
-
-top:135px;
-
-width:170px;
-
-height:14px;
-
-transition:1s;
-
-z-index:30;
+filter:
+drop-shadow(0 8px 10px rgba(0,0,0,.35));
 
 }
 
-.knife-blade{
-
-width:120px;
-
-height:8px;
-
-background:silver;
-
-float:left;
-
-border-radius:20px;
-
-}
-
-.knife-handle{
-
-width:45px;
-
-height:14px;
-
-background:#444;
-
-float:right;
-
-border-radius:10px;
-
-}
-
-/* ========= Message ========= */
+/* ==========================
+      Message
+========================== */
 
 .cake-message{
 
-margin-top:45px;
+margin-top:40px;
 
 font-size:34px;
 
@@ -5835,9 +5738,24 @@ font-weight:800;
 
 opacity:0;
 
-transform:translateY(30px);
+transform:
+translateY(25px);
 
 transition:.8s;
+
+background:
+linear-gradient(
+90deg,
+#ffffff,
+#ff9cf8,
+#ffffff);
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
+text-shadow:
+0 0 18px rgba(255,255,255,.35);
 
 }
 
@@ -5845,35 +5763,45 @@ transition:.8s;
 
 opacity:1;
 
-transform:translateY(0);
+transform:
+translateY(0);
 
 }
 
-/* ========= Button ========= */
+/* ==========================
+      Button
+========================== */
 
 #cutCakeBtn{
 
 margin-top:35px;
 
-padding:16px 40px;
+padding:15px 38px;
 
 border:none;
 
 border-radius:50px;
 
-font-size:18px;
-
-font-weight:bold;
-
-cursor:pointer;
-
-background:linear-gradient(135deg,#8f3fff,#ff4dd2);
+background:
+linear-gradient(
+135deg,
+#7d3cff,
+#ff4ed8);
 
 color:#fff;
 
-opacity:.4;
+font-size:18px;
 
-transition:.4s;
+font-weight:700;
+
+cursor:pointer;
+
+opacity:.45;
+
+transition:.35s;
+
+box-shadow:
+0 0 20px rgba(158,69,255,.35);
 
 }
 
@@ -5881,12 +5809,79 @@ transition:.4s;
 
 opacity:1;
 
-box-shadow:0 0 25px #b14cff;
+box-shadow:
+0 0 30px #b866ff;
 
 }
 
 #cutCakeBtn:hover{
 
-transform:scale(1.05);
+transform:
+translateY(-3px)
+scale(1.05);
 
 }
+
+/* ==========================
+      Floating Cake
+========================== */
+
+#birthdayCakeSVG{
+
+animation:
+cakeFloat 3.5s ease-in-out infinite;
+
+}
+
+@keyframes cakeFloat{
+
+0%{
+
+transform:
+translateY(0);
+
+}
+
+50%{
+
+transform:
+translateY(-8px);
+
+}
+
+100%{
+
+transform:
+translateY(0);
+
+}
+
+}
+
+/* ==========================
+      Mobile
+========================== */
+
+@media(max-width:600px){
+
+#birthdayCakeSVG{
+
+max-width:320px;
+
+}
+
+.cake-message{
+
+font-size:26px;
+
+}
+
+#cutCakeBtn{
+
+width:100%;
+
+max-width:240px;
+
+}
+
+        }
