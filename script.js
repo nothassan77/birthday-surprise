@@ -176,131 +176,30 @@ bgMusic.loop = true;
 
 // End Part 1
 
-/*==================================
-      PREMIUM LETTER ANIMATION
-==================================*/
+/* ===============================
+     PREMIUM ENVELOPE SCRIPT
+================================ */
+
 
 const envelope = document.getElementById("envelope");
-const openBtn = document.getElementById("openLetterBtn");
-const closeBtn = document.getElementById("closeLetterBtn");
-const letter = document.querySelector(".letter-paper");
-const flap = document.querySelector(".envelope-flap");
-const seal = document.querySelector(".wax-seal");
 
-// Open Letter
+const openBtn = document.getElementById("openLetter");
 
-openBtn.addEventListener("click", () => {
+const closeBtn = document.getElementById("closeLetter");
+
+
+
+openBtn.addEventListener("click",()=>{
 
     envelope.classList.add("open");
 
-    gsap.timeline()
-
-    // Break Wax Seal
-    .to(seal,{
-        scale:0,
-        opacity:0,
-        duration:0.3,
-        ease:"back.in"
-    })
-
-    // Open Flap
-    .to(flap,{
-        rotationX:-180,
-        duration:0.7,
-        ease:"power2.inOut"
-    },"<")
-
-    // Pull Letter Out
-    .to(letter,{
-        y:-140,
-        duration:0.9,
-        ease:"power3.out"
-    })
-
-    // Small Bounce
-    .to(letter,{
-        y:-130,
-        duration:0.25,
-        yoyo:true,
-        repeat:1
-    });
-
 });
 
-// Close Letter
+
 
 closeBtn.addEventListener("click",()=>{
 
-    gsap.timeline()
-
-    // Put Letter Back
-    .to(letter,{
-        y:0,
-        duration:0.8,
-        ease:"power2.inOut"
-    })
-
-    // Close Flap
-    .to(flap,{
-        rotationX:0,
-        duration:0.7,
-        ease:"power2.inOut"
-    },"<")
-
-    // Show Wax Seal Again
-    .to(seal,{
-        scale:1,
-        opacity:1,
-        duration:0.35
-    });
-
     envelope.classList.remove("open");
-
-        flap.style.zIndex = "1";
-
-});
-
-// Floating Envelope
-
-gsap.to(".envelope",{
-
-    y:-8,
-
-    duration:2.2,
-
-    repeat:-1,
-
-    yoyo:true,
-
-    ease:"sine.inOut"
-
-});
-
-// Glow Effect
-
-gsap.to(".wax-seal",{
-
-    boxShadow:"0 0 35px rgba(255,0,200,.7)",
-
-    duration:1,
-
-    repeat:-1,
-
-    yoyo:true
-
-});
-
-// Card Fade
-
-gsap.from(".letter-card",{
-
-    opacity:0,
-
-    y:40,
-
-    duration:1.2,
-
-    ease:"power2.out"
 
 });
 
