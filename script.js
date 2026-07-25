@@ -1289,3 +1289,282 @@ function createConfetti(){
     }
 
 }
+
+/* ==================================
+      PREMIUM SVG CAKE
+================================== */
+
+const candles = document.querySelectorAll(".candle");
+const cutCakeBtn = document.getElementById("cutCakeBtn");
+
+const cakeLeft = document.getElementById("cakeLeft");
+const cakeRight = document.getElementById("cakeRight");
+const cakeSlice = document.getElementById("cakeSlice");
+
+const knife = document.getElementById("knife");
+const cakeMessage = document.getElementById("cakeMessage");
+
+let blown = 0;
+
+/* ===========================
+      Blow Candles
+=========================== */
+
+candles.forEach(candle=>{
+
+candle.addEventListener("click",()=>{
+
+if(candle.classList.contains("off")) return;
+
+candle.classList.add("off");
+
+const flame=candle.querySelector(".flame");
+
+flame.animate([
+
+{transform:"scale(1)",opacity:1},
+
+{transform:"scale(.2)",opacity:0}
+
+],{
+
+duration:400,
+
+fill:"forwards"
+
+});
+
+blown++;
+
+if(blown===candles.length){
+
+cutCakeBtn.disabled=false;
+
+cutCakeBtn.classList.add("enabled");
+
+}
+
+});
+
+});
+
+/* ===========================
+      Cut Cake
+=========================== */
+
+cutCakeBtn.addEventListener("click",()=>{
+
+if(cutCakeBtn.disabled) return;
+
+cutCakeBtn.disabled=true;
+
+/* Knife */
+
+knife.animate([
+
+{transform:"translateX(0)"},
+
+{transform:"translateX(330px)"}
+
+],{
+
+duration:1000,
+
+fill:"forwards",
+
+easing:"ease-in-out"
+
+});
+
+/* Cake Split */
+
+setTimeout(()=>{
+
+cakeLeft.style.transform="translateX(-28px) rotate(-5deg)";
+
+cakeRight.style.transform="translateX(28px) rotate(5deg)";
+
+},900);
+
+/* Slice */
+
+setTimeout(()=>{
+
+cakeSlice.style.opacity="1";
+
+cakeSlice.style.transform="translate(85px,-25px) rotate(18deg)";
+
+},1400);
+
+/* Floating Slice */
+
+setTimeout(()=>{
+
+cakeSlice.style.transform="translate(120px,-40px) rotate(25deg)";
+
+},2200);
+
+/* Message */
+
+setTimeout(()=>{
+
+cakeMessage.classList.add("show");
+
+},2400);
+
+/* Fireworks */
+
+if(typeof createFirework==="function"){
+
+for(let i=0;i<18;i++){
+
+setTimeout(()=>{
+
+createFirework(
+
+Math.random()*window.innerWidth,
+
+Math.random()*window.innerHeight*0.6
+
+);
+
+},i*160);
+
+}
+
+}
+
+/* Hearts */
+
+for(let i=0;i<25;i++){
+
+setTimeout(createHeart,80*i);
+
+}
+
+/* Confetti */
+
+cakeConfetti();
+
+});
+
+/* ===========================
+      Hearts
+=========================== */
+
+function createHeart(){
+
+const heart=document.createElement("div");
+
+heart.innerHTML="💜";
+
+heart.style.position="fixed";
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.top="100vh";
+
+heart.style.fontSize=(18+Math.random()*18)+"px";
+
+heart.style.pointerEvents="none";
+
+heart.style.zIndex="99999";
+
+document.body.appendChild(heart);
+
+heart.animate([
+
+{
+
+transform:"translateY(0)",
+
+opacity:1
+
+},
+
+{
+
+transform:"translateY(-110vh)",
+
+opacity:0
+
+}
+
+],{
+
+duration:3500,
+
+easing:"ease-out"
+
+});
+
+setTimeout(()=>heart.remove(),3500);
+
+}
+
+/* ===========================
+      Confetti
+=========================== */
+
+function cakeConfetti(){
+
+for(let i=0;i<180;i++){
+
+const c=document.createElement("div");
+
+c.style.position="fixed";
+
+c.style.left=Math.random()*100+"vw";
+
+c.style.top="-20px";
+
+c.style.width=(4+Math.random()*8)+"px";
+
+c.style.height=c.style.width;
+
+c.style.background=
+
+`hsl(${Math.random()*360},100%,65%)`;
+
+c.style.borderRadius="50%";
+
+c.style.pointerEvents="none";
+
+c.style.zIndex="999999";
+
+document.body.appendChild(c);
+
+c.animate([
+
+{
+
+transform:"translateY(0)",
+
+opacity:1
+
+},
+
+{
+
+transform:
+
+`translate(${(Math.random()-.5)*300}px,${window.innerHeight+100}px)
+rotate(${Math.random()*720}deg)`,
+
+opacity:0
+
+}
+
+],{
+
+duration:3000+Math.random()*1500,
+
+easing:"ease-out"
+
+});
+
+setTimeout(()=>c.remove(),5000);
+
+}
+
+}
