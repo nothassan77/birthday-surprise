@@ -317,9 +317,9 @@ Happy Birthday once again.
 
 </section>
 
-        <!-- =========================
-        PREMIUM CAKE
-========================= -->
+        <!-- ===========================
+      PREMIUM SVG CAKE
+=========================== -->
 
 <section id="cake" class="cake-section">
 
@@ -331,84 +331,248 @@ Happy Birthday once again.
 
 <p class="section-text">
 Tap every candle to blow it out,
-then cut the cake and enjoy the celebration.
+then cut the cake.
 </p>
 
-<div class="cake-area">
+<div class="cake-wrapper">
 
-<div class="birthday-cake" id="birthdayCake">
+<svg id="birthdayCakeSVG"
+viewBox="0 0 500 500">
+
+<!-- Shadow -->
+
+<ellipse
+cx="250"
+cy="430"
+rx="150"
+ry="24"
+fill="rgba(0,0,0,.25)"
+/>
+
+<!-- Plate -->
+
+<ellipse
+cx="250"
+cy="410"
+rx="170"
+ry="28"
+fill="#ececec"
+/>
+
+<!-- Bottom Cake -->
+
+<rect
+id="cakeLeft"
+x="130"
+y="230"
+width="120"
+height="140"
+rx="18"
+fill="#b65dff"
+/>
+
+<rect
+id="cakeRight"
+x="250"
+y="230"
+width="120"
+height="140"
+rx="18"
+fill="#b65dff"
+/>
+
+<!-- Cream -->
+
+<rect
+x="130"
+y="210"
+width="240"
+height="25"
+rx="12"
+fill="#ffffff"
+/>
+
+<!-- Top Layer -->
+
+<rect
+x="160"
+y="150"
+width="180"
+height="70"
+rx="20"
+fill="#ffc8ef"
+/>
+
+<rect
+x="160"
+y="140"
+width="180"
+height="18"
+rx="10"
+fill="#ffffff"
+/>
+
+<!-- Cherries -->
+
+<circle cx="185" cy="135" r="8" fill="#ff2d55"/>
+<circle cx="250" cy="128" r="8" fill="#ff2d55"/>
+<circle cx="315" cy="135" r="8" fill="#ff2d55"/>
 
 <!-- Candles -->
 
-<div class="candles">
+<g class="candle" data-id="1">
 
-<div class="candle" data-id="1">
-<div class="flame"></div>
-<div class="smoke"></div>
-</div>
+<rect
+x="175"
+y="90"
+width="10"
+height="50"
+rx="4"
+fill="#fff"/>
 
-<div class="candle" data-id="2">
-<div class="flame"></div>
-<div class="smoke"></div>
-</div>
+<ellipse
+class="flame"
+cx="180"
+cy="80"
+rx="7"
+ry="12"
+fill="gold"/>
 
-<div class="candle" data-id="3">
-<div class="flame"></div>
-<div class="smoke"></div>
-</div>
+</g>
 
-<div class="candle" data-id="4">
-<div class="flame"></div>
-<div class="smoke"></div>
-</div>
+<g class="candle" data-id="2">
 
-<div class="candle" data-id="5">
-<div class="flame"></div>
-<div class="smoke"></div>
-</div>
+<rect
+x="215"
+y="90"
+width="10"
+height="50"
+rx="4"
+fill="#fff"/>
 
-</div>
+<ellipse
+class="flame"
+cx="220"
+cy="80"
+rx="7"
+ry="12"
+fill="gold"/>
 
-<!-- Cake -->
+</g>
 
-<div class="cake-body">
+<g class="candle" data-id="3">
 
-<div class="cake-left"></div>
+<rect
+x="245"
+y="90"
+width="10"
+height="50"
+rx="4"
+fill="#fff"/>
 
-<div class="cake-right"></div>
+<ellipse
+class="flame"
+cx="250"
+cy="80"
+rx="7"
+ry="12"
+fill="gold"/>
 
-<div class="cake-slice" id="cakeSlice"></div>
+</g>
 
-<div class="cream"></div>
+<g class="candle" data-id="4">
 
-<div class="plate"></div>
+<rect
+x="275"
+y="90"
+width="10"
+height="50"
+rx="4"
+fill="#fff"/>
 
-</div>
+<ellipse
+class="flame"
+cx="280"
+cy="80"
+rx="7"
+ry="12"
+fill="gold"/>
+
+</g>
+
+<g class="candle" data-id="5">
+
+<rect
+x="315"
+y="90"
+width="10"
+height="50"
+rx="4"
+fill="#fff"/>
+
+<ellipse
+class="flame"
+cx="320"
+cy="80"
+rx="7"
+ry="12"
+fill="gold"/>
+
+</g>
+
+<!-- Slice -->
+
+<polygon
+id="cakeSlice"
+points="310,210 360,300 310,370"
+fill="#d67bff"
+opacity="0"
+/>
 
 <!-- Knife -->
 
-<div class="knife" id="knife">
+<g id="knife">
 
-<div class="knife-blade"></div>
+<rect
+x="-140"
+y="255"
+width="120"
+height="8"
+rx="4"
+fill="silver"/>
 
-<div class="knife-handle"></div>
+<rect
+x="-30"
+y="250"
+width="40"
+height="18"
+rx="5"
+fill="#444"/>
 
-</div>
+</g>
 
-</div>
+</svg>
 
 </div>
 
 <div class="cake-buttons">
 
-<button id="cutCakeBtn" disabled>
+<button
+id="cutCakeBtn"
+disabled>
+
 🔪 Cut Cake
+
 </button>
 
 </div>
 
-<h2 class="cake-message" id="cakeMessage">
+<h2
+id="cakeMessage"
+class="cake-message">
+
 🎉 Happy Birthday Maham 💜
+
 </h2>
 
 </div>
