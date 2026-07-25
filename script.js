@@ -1290,81 +1290,102 @@ function createConfetti(){
 
 }
 
-// =========================
-// PREMIUM CAKE
-// =========================
+/*==================================
+      PREMIUM CAKE ANIMATION
+==================================*/
 
-const candles = document.querySelectorAll(".candle");
-const leftHalf = document.querySelector(".left-half");
-const rightHalf = document.querySelector(".right-half");
-const knife = document.getElementById("knife");
-const slice = document.getElementById("cakeSlice");
+// Floating Cake
 
-let blown = 0;
+gsap.to("#cake",{
 
-// Candle Click
+    y:-10,
 
-candles.forEach(candle => {
+    duration:2.5,
 
-    candle.addEventListener("click", () => {
+    repeat:-1,
 
-        if(candle.classList.contains("off")) return;
+    yoyo:true,
 
-        candle.classList.add("off");
-
-        blown++;
-
-        if(blown === candles.length){
-
-            setTimeout(cutCake,800);
-
-        }
-
-    });
+    ease:"sine.inOut"
 
 });
 
-function cutCake(){
+// Flickering Flames
 
-    gsap.timeline()
+gsap.to(".flame",{
 
-    // Knife enters
-    .to("#knife",{
-        x:260,
-        duration:1,
-        ease:"power2.out"
-    })
+    scale:1.12,
 
-    // Cake halves separate
-    .to(".left-half",{
-        x:-25,
-        rotation:-4,
-        duration:.6
-    },"-=0.2")
+    duration:0.18,
 
-    .to(".right-half",{
-        x:25,
-        rotation:4,
-        duration:.6
-    },"<")
+    repeat:-1,
 
-    // Slice comes out
-    .to("#cakeSlice",{
-        opacity:1,
-        y:-12,
-        x:65,
-        rotation:-12,
-        duration:.8,
-        ease:"back.out(1.7)"
-    })
+    yoyo:true,
 
-    // Knife exits
-    .to("#knife",{
-        x:520,
-        duration:.8
-    });
+    stagger:0.04,
 
-}
+    ease:"sine.inOut"
+
+});
+
+// Candle Glow
+
+gsap.to(".flame",{
+
+    filter:"drop-shadow(0 0 20px gold)",
+
+    duration:0.35,
+
+    repeat:-1,
+
+    yoyo:true
+
+});
+
+// Cake Glow
+
+gsap.to(".cake-body",{
+
+    boxShadow:
+    "0 0 40px rgba(255,120,220,.45)",
+
+    duration:2,
+
+    repeat:-1,
+
+    yoyo:true
+
+});
+
+// Cherries Animation
+
+gsap.to(".cherry",{
+
+    y:-3,
+
+    duration:1.5,
+
+    repeat:-1,
+
+    yoyo:true,
+
+    stagger:0.2
+
+});
+
+// Message Fade
+
+gsap.from(".cake-message",{
+
+    opacity:0,
+
+    y:30,
+
+    duration:1.8,
+
+    ease:"power2.out"
+
+});
 
 /* ===========================
       Hearts
