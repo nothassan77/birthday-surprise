@@ -180,28 +180,27 @@ bgMusic.loop = true;
      PREMIUM ENVELOPE SCRIPT
 ================================ */
 
-
 const envelope = document.getElementById("envelope");
-
 const openBtn = document.getElementById("openLetter");
-
 const closeBtn = document.getElementById("closeLetter");
+const envTop = document.getElementById("envTop");
 
-
-
-openBtn.addEventListener("click",()=>{
-
+openBtn.addEventListener("click", () => {
     envelope.classList.add("open");
 
+    setTimeout(() => {
+        envTop.style.display = "none";
+    }, 800);
 });
 
+closeBtn.addEventListener("click", () => {
+    envTop.style.display = "block";
 
-
-closeBtn.addEventListener("click",()=>{
-
-    envelope.classList.remove("open");
-
+    setTimeout(() => {
+        envelope.classList.remove("open");
+    }, 20);
 });
+
 
 /*==================================================
         JAVASCRIPT PART 4
