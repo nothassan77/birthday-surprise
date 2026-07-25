@@ -1165,115 +1165,209 @@ document.body.classList.add("website-loaded");
 
 console.log("✨ Premium Birthday Website Loaded Successfully");
 
-/* ===========================
-   PREMIUM CAKE ANIMATION
-=========================== */
+/* ===================================
+      PREMIUM CAKE ANIMATION
+=================================== */
 
-const wishBtn = document.getElementById("wishBtn");
+const candles = document.querySelectorAll(".candle");
 const cutCakeBtn = document.getElementById("cutCakeBtn");
 
-const knife = document.getElementById("cakeKnife");
-const cake = document.getElementById("birthdayCake");
-const message = document.getElementById("cakeMessage");
+const knife = document.getElementById("knife");
 
-const flames = document.querySelectorAll(".flame");
+const cakeLeft = document.querySelector(".cake-left");
+const cakeRight = document.querySelector(".cake-right");
 
-let wishDone = false;
-let cakeCut = false;
+const cakeSlice = document.getElementById("cakeSlice");
 
-/* Make A Wish */
+const cakeMessage = document.getElementById("cakeMessage");
 
-wishBtn.addEventListener("click",()=>{
+let blownCandles = 0;
 
-    if(wishDone) return;
+/* ===========================
+      BLOW CANDLES
+=========================== */
 
-    wishDone=true;
+candles.forEach(candle=>{
 
-    wishBtn.innerHTML="💜 Wish Made";
+candle.addEventListener("click",()=>{
 
-    flames.forEach((flame,index)=>{
+if(candle.classList.contains("off")) return;
 
-        setTimeout(()=>{
+candle.classList.add("off");
 
-            flame.style.opacity="0";
+blownCandles++;
 
-            flame.style.transform="translateX(-50%) scale(.2)";
+if(blownCandles===candles.length){
 
-        },index*300);
+cutCakeBtn.disabled=false;
 
-    });
+cutCakeBtn.classList.add("enabled");
+
+cutCakeBtn.innerHTML="🔪 Cut Cake";
+
+}
 
 });
 
-/* Cut Cake */
+});
+
+/* ===========================
+      CUT CAKE
+=========================== */
 
 cutCakeBtn.addEventListener("click",()=>{
 
-    if(cakeCut) return;
+if(cutCakeBtn.disabled) return;
 
-    cakeCut=true;
+/* Lock Button */
 
-    /* Knife Animation */
+cutCakeBtn.disabled=true;
 
-    knife.style.left="35px";
+/* Knife Enter */
 
-    setTimeout(()=>{
+knife.style.left="55px";
 
-        knife.style.left="250px";
+setTimeout(()=>{
 
-    },900);
+knife.style.left="220px";
 
-    /* Cake Animation */
+},900);
 
-    setTimeout(()=>{
+/* Cake Split */
 
-        cake.style.transform="scale(.96) rotate(-1deg)";
+setTimeout(()=>{
 
-        cake.style.transition=".4s";
+cakeLeft.style.transform="translateX(-25px) rotate(-6deg)";
 
-    },700);
+cakeRight.style.transform="translateX(25px) rotate(6deg)";
 
-    setTimeout(()=>{
+},950);
 
-        cake.style.transform="scale(1)";
+/* Slice Move */
 
-    },1100);
+setTimeout(()=>{
 
-    /* Show Message */
+cakeSlice.style.opacity="1";
 
-    setTimeout(()=>{
+cakeSlice.style.transform="translate(110px,-25px) rotate(15deg)";
 
-        message.classList.add("show");
+},1400);
 
-    },1500);
+/* Floating Slice */
 
-    /* Fireworks */
+setTimeout(()=>{
 
-    if(typeof createFirework==="function"){
+cakeSlice.style.transform="translate(130px,-40px) rotate(22deg)";
 
-        for(let i=0;i<10;i++){
+},2200);
 
-            setTimeout(()=>{
+/* Birthday Message */
 
-                createFirework(
+setTimeout(()=>{
 
-                    Math.random()*window.innerWidth,
+cakeMessage.classList.add("show");
 
-                    Math.random()*window.innerHeight/2
+},2500);
 
-                );
+/* Fireworks */
 
-            },i*200);
+if(typeof createFirework==="function"){
 
-        }
+for(let i=0;i<15;i++){
 
-    }
+setTimeout(()=>{
 
-    /* Confetti */
+createFirework(
 
-    createConfetti();
+Math.random()*window.innerWidth,
+
+Math.random()*window.innerHeight*0.6
+
+);
+
+},i*180);
+
+}
+
+}
+
+/* Confetti */
+
+createCakeConfetti();
 
 });
+
+/* ===========================
+      CONFETTI
+=========================== */
+
+function createCakeConfetti(){
+
+for(let i=0;i<180;i++){
+
+const conf=document.createElement("div");
+
+conf.style.position="fixed";
+
+conf.style.left=Math.random()*100+"vw";
+
+conf.style.top="-20px";
+
+conf.style.width=(5+Math.random()*8)+"px";
+
+conf.style.height=conf.style.width;
+
+conf.style.borderRadius="50%";
+
+conf.style.pointerEvents="none";
+
+conf.style.zIndex="999999";
+
+conf.style.background=
+
+`hsl(${Math.random()*360},100%,65%)`;
+
+document.body.appendChild(conf);
+
+const x=(Math.random()-0.5)*400;
+
+const y=window.innerHeight+150;
+
+conf.animate([
+
+{
+
+transform:"translate(0,0) rotate(0deg)",
+
+opacity:1
+
+},
+
+{
+
+transform:`translate(${x}px,${y}px) rotate(${Math.random()*720}deg)`,
+
+opacity:0
+
+}
+
+],{
+
+duration:3500+Math.random()*1500,
+
+easing:"ease-out"
+
+});
+
+setTimeout(()=>{
+
+conf.remove();
+
+},5000);
+
+}
+
+}
 
 /* ===========================
       CONFETTI
