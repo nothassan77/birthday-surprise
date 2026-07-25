@@ -5549,232 +5549,295 @@ transform:scale(1.08);
     z-index:5;
 }
 
-/* =========================
-   PREMIUM CAKE SECTION
-========================= */
+/* ===========================
+      PREMIUM CAKE
+=========================== */
 
 .cake-section{
-    padding:100px 20px;
+padding:100px 20px;
+display:flex;
+justify-content:center;
 }
 
 .cake-card{
-    max-width:900px;
-    margin:auto;
-    text-align:center;
+width:100%;
+max-width:850px;
+text-align:center;
 }
 
-.cake-scene{
-    position:relative;
-    width:320px;
-    height:340px;
-    margin:50px auto;
+.cake-area{
+margin-top:50px;
+display:flex;
+justify-content:center;
 }
-
-/* Cake */
 
 .birthday-cake{
-    position:relative;
-    width:220px;
-    margin:auto;
+position:relative;
+width:320px;
+height:320px;
 }
 
-/* Bottom */
-
-.cake-bottom{
-    width:220px;
-    height:120px;
-    border-radius:0 0 35px 35px;
-    background:linear-gradient(135deg,#8f35ff,#ff49cf);
-    box-shadow:
-    0 20px 40px rgba(0,0,0,.35),
-    inset 0 0 25px rgba(255,255,255,.15);
-}
-
-/* Top */
-
-.cake-top{
-    width:190px;
-    height:70px;
-    margin:auto;
-    border-radius:25px 25px 10px 10px;
-    background:linear-gradient(135deg,#ffffff,#ffe4ff);
-    position:relative;
-}
-
-.icing{
-    position:absolute;
-    left:0;
-    right:0;
-    bottom:-10px;
-    height:20px;
-    background:#fff;
-    border-radius:20px;
-}
-
-/* Candles */
+/* ========= Candles ========= */
 
 .candles{
-    display:flex;
-    justify-content:center;
-    gap:30px;
-    margin-bottom:10px;
+position:absolute;
+top:15px;
+left:50%;
+transform:translateX(-50%);
+display:flex;
+gap:18px;
+z-index:20;
 }
 
 .candle{
-    width:10px;
-    height:45px;
-    border-radius:10px;
-    background:linear-gradient(#ff9af8,#ffffff);
-    position:relative;
+position:relative;
+width:14px;
+height:65px;
+border-radius:20px;
+background:linear-gradient(#ffffff,#ff7df8);
+cursor:pointer;
+transition:.4s;
 }
 
 .flame{
-    position:absolute;
-    top:-18px;
-    left:50%;
-    transform:translateX(-50%);
-    width:14px;
-    height:20px;
-    border-radius:50%;
-    background:gold;
-    box-shadow:
-    0 0 12px gold,
-    0 0 28px orange;
-    animation:flicker .15s infinite alternate;
+position:absolute;
+left:50%;
+top:-22px;
+transform:translateX(-50%);
+width:18px;
+height:24px;
+background:gold;
+border-radius:50% 50% 50% 50%;
+box-shadow:
+0 0 10px gold,
+0 0 25px orange,
+0 0 40px yellow;
+animation:flicker .18s infinite alternate;
+}
+
+.smoke{
+position:absolute;
+left:50%;
+top:-18px;
+width:10px;
+height:10px;
+border-radius:50%;
+background:#ccc;
+opacity:0;
+transform:translateX(-50%) scale(.2);
+}
+
+.candle.off .flame{
+opacity:0;
+}
+
+.candle.off .smoke{
+animation:smoke .9s forwards;
+}
+
+@keyframes smoke{
+
+0%{
+opacity:1;
+transform:translateX(-50%) scale(.4);
+}
+
+100%{
+opacity:0;
+transform:translateX(-50%) translateY(-40px) scale(2);
+}
+
 }
 
 @keyframes flicker{
 
-0%{
+from{
 transform:translateX(-50%) scale(1);
 }
 
-100%{
+to{
 transform:translateX(-50%) scale(1.15);
 }
 
 }
 
-/* Knife */
+/* ========= Cake ========= */
 
-.knife{
-    position:absolute;
-    width:150px;
-    height:6px;
-    background:silver;
-    border-radius:10px;
-    top:110px;
-    left:-170px;
-    transition:1s;
-}
-
-.knife::after{
-
-content:"";
+.cake-body{
 
 position:absolute;
 
-right:-18px;
+bottom:40px;
 
-top:-6px;
+left:50%;
 
-width:22px;
+transform:translateX(-50%);
 
-height:18px;
+width:240px;
 
-background:#444;
-
-border-radius:6px;
+height:140px;
 
 }
 
-/* Shadow */
+.cake-left,
+.cake-right{
 
-.cake-shadow{
+position:absolute;
 
-width:190px;
+bottom:0;
+
+width:120px;
+
+height:140px;
+
+background:linear-gradient(180deg,#ffb4ff,#9f48ff);
+
+border-radius:0 0 25px 25px;
+
+transition:1s;
+
+box-shadow:
+0 15px 30px rgba(0,0,0,.25);
+
+}
+
+.cake-left{
+
+left:0;
+
+}
+
+.cake-right{
+
+right:0;
+
+}
+
+.cream{
+
+position:absolute;
+
+top:-18px;
+
+left:0;
+
+width:240px;
+
+height:30px;
+
+background:white;
+
+border-radius:25px;
+
+}
+
+.plate{
+
+position:absolute;
+
+bottom:-18px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+width:280px;
 
 height:18px;
 
-margin:18px auto 0;
-
-background:rgba(0,0,0,.25);
-
-filter:blur(10px);
+background:#ddd;
 
 border-radius:50%;
 
 }
 
-/* Buttons */
+/* ========= Slice ========= */
 
-.cake-buttons{
+.cake-slice{
 
-display:flex;
+position:absolute;
 
-justify-content:center;
+right:25px;
 
-gap:20px;
+bottom:0;
 
-flex-wrap:wrap;
+width:55px;
 
-margin-top:35px;
+height:120px;
 
-}
+background:linear-gradient(#ffb4ff,#9f48ff);
 
-.cake-buttons button{
+clip-path:polygon(0 0,100% 50%,0 100%);
 
-padding:15px 35px;
+opacity:0;
 
-border:none;
-
-border-radius:50px;
-
-font-size:17px;
-
-font-weight:700;
-
-cursor:pointer;
-
-background:linear-gradient(135deg,#8b3dff,#ff3bd4);
-
-color:#fff;
-
-box-shadow:0 10px 30px rgba(170,70,255,.45);
-
-transition:.35s;
+transition:1s;
 
 }
 
-.cake-buttons button:hover{
+/* ========= Knife ========= */
 
-transform:translateY(-5px) scale(1.05);
+.knife{
+
+position:absolute;
+
+left:-180px;
+
+top:135px;
+
+width:170px;
+
+height:14px;
+
+transition:1s;
+
+z-index:30;
 
 }
 
-/* Message */
+.knife-blade{
+
+width:120px;
+
+height:8px;
+
+background:silver;
+
+float:left;
+
+border-radius:20px;
+
+}
+
+.knife-handle{
+
+width:45px;
+
+height:14px;
+
+background:#444;
+
+float:right;
+
+border-radius:10px;
+
+}
+
+/* ========= Message ========= */
 
 .cake-message{
 
 margin-top:45px;
 
-font-size:36px;
+font-size:34px;
 
 font-weight:800;
 
 opacity:0;
 
-transform:translateY(40px);
+transform:translateY(30px);
 
 transition:.8s;
-
-background:linear-gradient(90deg,#fff,#ff8df5,#fff);
-
--webkit-background-clip:text;
-
--webkit-text-fill-color:transparent;
-
-text-shadow:0 0 20px rgba(255,255,255,.4);
 
 }
 
@@ -5786,39 +5849,44 @@ transform:translateY(0);
 
 }
 
-/* Sparkles */
+/* ========= Button ========= */
 
-.cake-sparkles{
+#cutCakeBtn{
 
-position:absolute;
+margin-top:35px;
 
-inset:0;
+padding:16px 40px;
 
-pointer-events:none;
+border:none;
 
-background:
-radial-gradient(circle,#fff 2px,transparent 3px) 20px 40px/80px 80px,
-radial-gradient(circle,#ffd8ff 2px,transparent 3px) 60px 100px/90px 90px,
-radial-gradient(circle,#fff 2px,transparent 3px) 120px 50px/100px 100px;
+border-radius:50px;
 
-animation:sparkleMove 5s linear infinite;
+font-size:18px;
 
-opacity:.7;
+font-weight:bold;
+
+cursor:pointer;
+
+background:linear-gradient(135deg,#8f3fff,#ff4dd2);
+
+color:#fff;
+
+opacity:.4;
+
+transition:.4s;
+
+}
+
+#cutCakeBtn.enabled{
+
+opacity:1;
+
+box-shadow:0 0 25px #b14cff;
 
 }
 
-@keyframes sparkleMove{
+#cutCakeBtn:hover{
 
-from{
-
-transform:translateY(0);
-
-}
-
-to{
-
-transform:translateY(-40px);
-
-}
+transform:scale(1.05);
 
 }
