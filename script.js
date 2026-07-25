@@ -176,172 +176,131 @@ bgMusic.loop = true;
 
 // End Part 1
 
-/*==================================================
-        JAVASCRIPT PART 3
-        SECRET LETTER + TYPEWRITER
-==================================================*/
-
-// Elements
+/*==================================
+      PREMIUM LETTER ANIMATION
+==================================*/
 
 const envelope = document.getElementById("envelope");
-
-const openLetterBtn = document.getElementById("openLetterBtn");
-
-const closeLetterBtn = document.getElementById("closeLetterBtn");
-
-const hiddenLetter = document.getElementById("hiddenLetter");
-
-const letterContent = document.getElementById("letterContent");
-
-// Variables
-
-let letterOpened = false;
-
-let typingInterval;
+const openBtn = document.getElementById("openLetterBtn");
+const closeBtn = document.getElementById("closeLetterBtn");
+const letter = document.querySelector(".letter-paper");
+const flap = document.querySelector(".envelope-flap");
+const seal = document.querySelector(".wax-seal");
 
 // Open Letter
 
-openLetterBtn.addEventListener("click",()=>{
+openBtn.addEventListener("click", () => {
 
-if(letterOpened) return;
+    envelope.classList.add("open");
 
-letterOpened = true;
+    gsap.timeline()
 
-envelope.classList.add("open");
+    // Break Wax Seal
+    .to(seal,{
+        scale:0,
+        opacity:0,
+        duration:0.3,
+        ease:"back.in"
+    })
 
-letterContent.innerHTML="";
+    // Open Flap
+    .to(flap,{
+        rotationX:-180,
+        duration:0.7,
+        ease:"power2.inOut"
+    },"<")
 
-typeLetter();
+    // Pull Letter Out
+    .to(letter,{
+        y:-140,
+        duration:0.9,
+        ease:"power3.out"
+    })
 
-showToast("💌 Letter Opened");
-
-if(typeof launchFireworks==="function"){
-
-launchFireworks();
-
-}
-
-if(typeof createHeart==="function"){
-
-for(let i=0;i<20;i++){
-
-setTimeout(createHeart,i*120);
-
-}
-
-}
+    // Small Bounce
+    .to(letter,{
+        y:-130,
+        duration:0.25,
+        yoyo:true,
+        repeat:1
+    });
 
 });
 
 // Close Letter
 
-closeLetterBtn.addEventListener("click",()=>{
+closeBtn.addEventListener("click",()=>{
 
-envelope.classList.remove("open");
+    gsap.timeline()
 
-clearInterval(typingInterval);
+    // Put Letter Back
+    .to(letter,{
+        y:0,
+        duration:0.8,
+        ease:"power2.inOut"
+    })
 
-letterContent.innerHTML="";
+    // Close Flap
+    .to(flap,{
+        rotationX:0,
+        duration:0.7,
+        ease:"power2.inOut"
+    },"<")
 
-letterOpened=false;
+    // Show Wax Seal Again
+    .to(seal,{
+        scale:1,
+        opacity:1,
+        duration:0.35
+    });
 
-showToast("📩 Letter Closed");
-
-});
-
-// Typewriter Effect
-
-function typeLetter(){
-
-const text=hiddenLetter.innerText;
-
-let index=0;
-
-typingInterval=setInterval(()=>{
-
-if(index<text.length){
-
-letterContent.innerHTML+=text.charAt(index);
-
-letterContent.scrollTop=letterContent.scrollHeight;
-
-index++;
-
-}else{
-
-clearInterval(typingInterval);
-
-}
-
-},28);
-
-}
-
-// Envelope Hover
-
-envelope.addEventListener("mouseenter",()=>{
-
-envelope.style.transform="scale(1.05) rotateY(6deg)";
+    envelope.classList.remove("open");
 
 });
 
-envelope.addEventListener("mouseleave",()=>{
+// Floating Envelope
 
-envelope.style.transform="scale(1) rotateY(0deg)";
+gsap.to(".envelope",{
 
-});
+    y:-8,
 
-// Floating Glow
+    duration:2.2,
 
-setInterval(()=>{
+    repeat:-1,
 
-if(!letterOpened){
+    yoyo:true,
 
-envelope.animate([
-
-{
-
-transform:"translateY(0px)"
-
-},
-
-{
-
-transform:"translateY(-8px)"
-
-},
-
-{
-
-transform:"translateY(0px)"
-
-}
-
-],{
-
-duration:2600,
-
-iterations:1
+    ease:"sine.inOut"
 
 });
 
-}
+// Glow Effect
 
-},2800);
+gsap.to(".wax-seal",{
 
-// Random Sparkles
+    boxShadow:"0 0 35px rgba(255,0,200,.7)",
 
-setInterval(()=>{
+    duration:1,
 
-if(typeof createSparkle==="function"){
+    repeat:-1,
 
-createSparkle();
+    yoyo:true
 
-}
+});
 
-},1800);
+// Card Fade
 
-// End Part 3
+gsap.from(".letter-card",{
+
+    opacity:0,
+
+    y:40,
+
+    duration:1.2,
+
+    ease:"power2.out"
+
+});
 
 /*==================================================
         JAVASCRIPT PART 4
