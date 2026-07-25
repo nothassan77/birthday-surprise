@@ -1290,163 +1290,81 @@ function createConfetti(){
 
 }
 
-/* ==================================
-      PREMIUM SVG CAKE
-================================== */
+// =========================
+// PREMIUM CAKE
+// =========================
 
 const candles = document.querySelectorAll(".candle");
-const cutCakeBtn = document.getElementById("cutCakeBtn");
-
-const cakeLeft = document.getElementById("cakeLeft");
-const cakeRight = document.getElementById("cakeRight");
-const cakeSlice = document.getElementById("cakeSlice");
-
+const leftHalf = document.querySelector(".left-half");
+const rightHalf = document.querySelector(".right-half");
 const knife = document.getElementById("knife");
-const cakeMessage = document.getElementById("cakeMessage");
+const slice = document.getElementById("cakeSlice");
 
 let blown = 0;
 
-/* ===========================
-      Blow Candles
-=========================== */
+// Candle Click
 
-candles.forEach(candle=>{
+candles.forEach(candle => {
 
-candle.addEventListener("click",()=>{
+    candle.addEventListener("click", () => {
 
-if(candle.classList.contains("off")) return;
+        if(candle.classList.contains("off")) return;
 
-candle.classList.add("off");
+        candle.classList.add("off");
 
-const flame=candle.querySelector(".flame");
+        blown++;
 
-flame.animate([
+        if(blown === candles.length){
 
-{transform:"scale(1)",opacity:1},
+            setTimeout(cutCake,800);
 
-{transform:"scale(.2)",opacity:0}
+        }
 
-],{
-
-duration:400,
-
-fill:"forwards"
+    });
 
 });
 
-blown++;
+function cutCake(){
 
-if(blown===candles.length){
+    gsap.timeline()
 
-cutCakeBtn.disabled=false;
+    // Knife enters
+    .to("#knife",{
+        x:260,
+        duration:1,
+        ease:"power2.out"
+    })
 
-cutCakeBtn.classList.add("enabled");
+    // Cake halves separate
+    .to(".left-half",{
+        x:-25,
+        rotation:-4,
+        duration:.6
+    },"-=0.2")
+
+    .to(".right-half",{
+        x:25,
+        rotation:4,
+        duration:.6
+    },"<")
+
+    // Slice comes out
+    .to("#cakeSlice",{
+        opacity:1,
+        y:-12,
+        x:65,
+        rotation:-12,
+        duration:.8,
+        ease:"back.out(1.7)"
+    })
+
+    // Knife exits
+    .to("#knife",{
+        x:520,
+        duration:.8
+    });
 
 }
-
-});
-
-});
-
-/* ===========================
-      Cut Cake
-=========================== */
-
-cutCakeBtn.addEventListener("click",()=>{
-
-if(cutCakeBtn.disabled) return;
-
-cutCakeBtn.disabled=true;
-
-/* Knife */
-
-knife.animate([
-
-{transform:"translateX(0)"},
-
-{transform:"translateX(330px)"}
-
-],{
-
-duration:1000,
-
-fill:"forwards",
-
-easing:"ease-in-out"
-
-});
-
-/* Cake Split */
-
-setTimeout(()=>{
-
-cakeLeft.style.transform="translateX(-28px) rotate(-5deg)";
-
-cakeRight.style.transform="translateX(28px) rotate(5deg)";
-
-},900);
-
-/* Slice */
-
-setTimeout(()=>{
-
-cakeSlice.style.opacity="1";
-
-cakeSlice.style.transform="translate(85px,-25px) rotate(18deg)";
-
-},1400);
-
-/* Floating Slice */
-
-setTimeout(()=>{
-
-cakeSlice.style.transform="translate(120px,-40px) rotate(25deg)";
-
-},2200);
-
-/* Message */
-
-setTimeout(()=>{
-
-cakeMessage.classList.add("show");
-
-},2400);
-
-/* Fireworks */
-
-if(typeof createFirework==="function"){
-
-for(let i=0;i<18;i++){
-
-setTimeout(()=>{
-
-createFirework(
-
-Math.random()*window.innerWidth,
-
-Math.random()*window.innerHeight*0.6
-
-);
-
-},i*160);
-
-}
-
-}
-
-/* Hearts */
-
-for(let i=0;i<25;i++){
-
-setTimeout(createHeart,80*i);
-
-}
-
-/* Confetti */
-
-cakeConfetti();
-
-});
 
 /* ===========================
       Hearts
