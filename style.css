@@ -2344,6 +2344,10 @@ line-height:1.9;
 
     margin:0 auto 40px;
 
+    overflow:hidden;
+
+}
+
 }
 
 /* Back */
@@ -2371,7 +2375,7 @@ line-height:1.9;
 
     left:50%;
 
-    top:35px;
+    top:85px;
 
     transform:translateX(-50%);
 
@@ -2581,12 +2585,13 @@ line-height:1.9;
 
     transform:rotateX(180deg);
 
+    z-index:1;
+
 }
 
 .envelope.open .letter-paper{
 
-    transform:
-    translate(-50%,-120px);
+    transform:translate(-50%,-90px);
 
 }
 
