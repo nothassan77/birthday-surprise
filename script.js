@@ -256,6 +256,8 @@ closeBtn.addEventListener("click",()=>{
 
     envelope.classList.remove("open");
 
+        flap.style.zIndex = "1";
+
 });
 
 // Floating Envelope
