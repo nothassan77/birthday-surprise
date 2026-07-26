@@ -2344,12 +2344,7 @@ line-height:1.9;
     height: 200px;
     margin: 40px auto;
     perspective: 1000px;
-
 }
-
-}
-
-
 
 .env-back,
 .env-bottom,
@@ -2596,6 +2591,10 @@ line-height:1.9;
     }
 
         }
+
+.letter-card{
+    position: relative;
+}
 
 /*==================================================
         CSS PART 9
