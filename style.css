@@ -2338,16 +2338,15 @@ line-height:1.9;
 ================================ */
 
 
-.envelope {
+.envelope{
+    position: relative;
+    width: 300px;
+    height: 200px;
+    margin: 40px auto;
+    perspective: 1000px;
 
-    position:relative;
-
-    width:300px;
-    height:200px;
-
-    margin:40px auto;
-
-    perspective:1000px;
+    overflow: visible;   /* <-- Ye add karein */
+}
 
 }
 
@@ -2466,32 +2465,22 @@ line-height:1.9;
 
 /* Letter */
 
-.letter {
+.letter{
+    position: absolute;
+    width: 90%;
+    height: 85%;
+    background: white;
+    left: 5%;
+    bottom: 10px;
+    border-radius: 10px;
+    padding: 20px;
 
-    position:absolute;
+    z-index: 20;          /* 2 ki jagah 20 */
+    transform: translateY(70px);
+    opacity: 0;
+    transition: 1s ease;
 
-    width:90%;
-    height:85%;
-
-    background:white;
-
-    left:5%;
-    bottom:10px;
-
-    border-radius:10px;
-
-    z-index:2;
-
-    padding:20px;
-
-    transform:translateY(70px);
-
-    opacity:0;
-
-    transition:1s ease;
-
-    overflow:hidden;
-
+    overflow-y: auto;     /* hidden ki jagah auto */
 }
 
 
@@ -2545,12 +2534,9 @@ line-height:1.9;
 }
 
 
-.envelope.open .letter {
-
-    transform:translateY(-100px);
-
-    opacity:1;
-
+.envelope.open .letter{
+    transform: translateY(-170px);
+    opacity: 1;
 }
 
 
