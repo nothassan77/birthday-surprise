@@ -2474,12 +2474,12 @@ line-height:1.9;
     border-radius: 10px;
     padding: 20px;
 
-    z-index: 20;          /* 2 ki jagah 20 */
+    z-index: 2;
     transform: translateY(70px);
     opacity: 0;
     transition: 1s ease;
 
-    overflow-y: auto;     /* hidden ki jagah auto */
+    overflow-y: auto;    
 }
 
 
@@ -2534,7 +2534,7 @@ line-height:1.9;
 
 
 .envelope.open .letter{
-    transform: translateY(-170px);
+    transform: translateY(-100px);
     opacity: 1;
 }
 
