@@ -2264,20 +2264,16 @@ line-height:1.9;
    PREMIUM ENVELOPE V2 CSS
 ================================ */
 
-#letterSection {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background:
-    radial-gradient(circle at top, #4b1b6f, #120018 70%);
-    padding: 30px 15px;
-    font-family: 'Poppins', sans-serif;
+#letterSection{
+    min-height: auto;
+    display: block;
+    padding: 80px 20px;
 }
 
 
 .letter-card {
-
+        
+    position: relative;
     width: 100%;
     max-width: 430px;
     padding: 35px 25px;
